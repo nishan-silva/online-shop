@@ -1,2 +1,2 @@
---variable	ENV_BACKEND_HOST:https://automationexercise.com
+--variable	ENV_BACKEND_HOST:localhost
 --variable  ENV_BACKEND_PORT:8080

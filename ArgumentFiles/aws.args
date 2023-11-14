@@ -1,4 +1,4 @@
 --variable TESTING_WORKSPACE:/online-shop
---variable ENV_BACKEND_PROTOCOL:https://
---variable ENV_BACKEND_HOST:https://automationexercise.com
+--variable ENV_BACKEND_PROTOCOL:https
+--variable ENV_BACKEND_HOST:automationexercise.com
 --variable ENV_BACKEND_PORT:8080
