@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20231114 02:11:00.723" rpa="false" schemaversion="4">
+<suite id="s1" name="Api" source="C:\Automation\online-shop\TestSuites\api.robot">
+<test id="s1-t1" name="GET /api/productsList" line="13">
+<status status="FAIL" starttime="20231114 02:11:00.848" endtime="20231114 02:11:00.853">Test cannot be empty.</status>
+</test>
+<test id="s1-t2" name="${response}=" line="14">
+<kw name="GET" library="RequestsLibrary">
+<arg>${URL}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20231114 02:11:01.993" level="INFO">GET Request : url=https://automationexercise.com/ 
+ path_url=/ 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231114 02:11:01.993" level="INFO">GET Response : url=https://automationexercise.com/ 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 14 Nov 2023 00:11:02 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'x-powered-by': 'Phusion Passenger 6.0.7', 'set-cookie': 'csrftoken=IbgEcTKcM3CLRv9Q7W0C09wnIkU3dL2ySy7OIuxcQH3SasIhVvI2LHSKxf4ix1NG; expires=Tue, 12 Nov 2024 00:11:02 GMT; Max-Age=31449600; Path=/; SameSite=Lax', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=YrkLFlfiSENGNv6V3%2BTWz1lDJiOqy1VkaSRgO1Bp3y7QfsN3XGHAKUPkejHo58Ou2fVKVoXKgSjCXBqlqhqcXuhJneWTOsoaHPvMq9ic7hrL1FKoCAyenEfTQM9gkPL62wzi5NksFqpW"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '825b08ea4b9cd963-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta name="description" content="This is for automation practice"&gt;
+	&lt;meta name="robots" content="index"/&gt;
+	&lt;meta name="keywords" content="Automation Exercise / Automation Practice / Practice website for automation / demo website for practice / dummy website for testing / testing website / dummy website for practice automation / API Testing / API automation"&gt;
+	&lt;meta name="google-site-verification" content="VS1KtEV7m0Pp9MRMwCpyR7rGwUVYH6N8l1zoVepsGWs" /&gt;
+
+    &lt;title&gt;Automation Exercise&lt;/title&gt;
+
+	
+
+    &lt;link href="/static/css/bootstrap.min.css" rel="stylesheet"&gt;
+    &lt;link href="/static/css/font-awesome.min.css" rel="stylesheet"&gt;
+    &lt;link href="/static/css/prettyPhoto.css" rel="stylesheet"&gt;
+    &lt;link href="/static/css/animate.css" rel="stylesheet"&gt;
+	&lt;link href="/static/css/main.css" rel="stylesheet"&gt;
+	&lt;link href="/static/css/responsive.css" rel="stylesheet"&gt;
+	&lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&gt;
+	&lt;link href="/static/css/cart.css" rel="stylesheet"&gt;
+
+    &lt;!--[if lt IE 9]&gt;
+    &lt;script src="/static/js/html5.js"&gt;&lt;/script&gt;
+    &lt;script src="/static/js/respond.min.js"&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;       
+    &lt;link rel="shortcut icon" href="/static/images/home/short_logo.png"&gt;
+    &lt;link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/images/ico/apple-touch-icon-144-precomposed.png"&gt;
+    &lt;link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/images/ico/apple-touch-icon-114-precomposed.png"&gt;
+    &lt;link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/images/ico/apple-touch-icon-72-precomposed.png"&gt;
+    &lt;link rel="apple-touch-icon-precomposed" href="/static/images/ico/apple-touch-icon-57-precomposed.png"&gt;
+
+	&lt;script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1677597403311019"
+     crossorigin="anonymous"&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+	&lt;header id="header"&gt;
+		&lt;div class="header-middle"&gt;
+			&lt;div class="container"&gt;
+				&lt;div class="row"&gt;
+					&lt;div class="col-sm-4"&gt;
+						&lt;div class="logo pull-left"&gt;
+							&lt;a href="/"&gt;&lt;img src="/static/images/home/logo.png" alt="Website for automation practice" /&gt;&lt;/a&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class="col-sm-8"&gt;
+						&lt;div class="shop-menu pull-right"&gt;
+							&lt;ul class="nav navbar-nav"&gt;
+								
+								&lt;li&gt;&lt;a href="/" style="color: orange;"&gt;&lt;i class="fa fa-home"&gt;&lt;/i&gt; Home&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href="/products"&gt;&lt;i class="material-icons card_travel" style="font-size: 16px;"&gt;&amp;#xe8f8;&lt;/i&gt; Products&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href="/view_cart"&gt;&lt;i class="fa fa-shopping-cart"&gt;&lt;/i&gt; Cart&lt;/a&gt;&lt;/li&gt;
+								
+								&lt;li&gt;&lt;a href="/login"&gt;&lt;i class="fa fa-lock"&gt;&lt;/i&gt; Signup / Login&lt;/a&gt;&lt;/li&gt;
+								
+								&lt;li&gt;&lt;a href="/test_cases"&gt;&lt;i class="fa fa-list"&gt;&lt;/i&gt; Test Cases&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href="/api_list"&gt;&lt;i class="fa fa-list"&gt;&lt;/i&gt; API Testing&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href="https://www.youtube.com/c/AutomationExercise"&gt;&lt;i class="fa fa-youtube-play"&gt;&lt;/i&gt; Video Tutorials&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href="/contact_us"&gt;&lt;i class="fa fa-envelope"&gt;&lt;/i&gt; Contact us&lt;/a&gt;&lt;/li&gt;
+								
+							&lt;/ul&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/header&gt;
+	
+	&lt;section id="slider"&gt;
+		&lt;div class="container"&gt;
+			&lt;div class="row"&gt;
+				&lt;div class="col-sm-12"&gt;
+					&lt;div id="slider-carousel" class="carousel slide" data-ride="carousel"&gt;
+						&lt;ol class="carousel-indicators"&gt;
+							&lt;li data-target="#slider-carousel" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+							&lt;li data-target="#slider-carousel" data-slide-to="1"&gt;&lt;/li&gt;
+							&lt;li data-target="#slider-carousel" data-slide-to="2"&gt;&lt;/li&gt;
+						&lt;/ol&gt;
+						
+						&lt;div class="carousel-inner"&gt;
+							&lt;div class="item active"&gt;
+								&lt;div class="col-sm-6"&gt;
+									&lt;h1&gt;&lt;span&gt;Automation&lt;/span&gt;Exercise&lt;/h1&gt;
+									&lt;h2&gt;Full-Fledged practice website for Automation Engineers&lt;/h2&gt;
+									&lt;p&gt;All QA engineers can use this website for automation practice and API testing either they are at beginner or advance level. This is for everybody to help them brush up their automation skills.&lt;/p&gt;
+									&lt;a href="/test_cases" class="test_cases_list"&gt;&lt;button type="button" class="btn btn-success"&gt;Test Cases&lt;/button&gt;&lt;/a&gt;
+									&lt;a href="/api_list" class="apis_list"&gt;&lt;button type="button" class="btn btn-success"&gt;APIs list for practice&lt;/button&gt;&lt;/a&gt;
+								&lt;/div&gt;
+								&lt;div class="col-sm-6"&gt;
+									&lt;img src="/static/images/home/girl2.jpg" class="girl img-responsive" alt="demo website for practice" /&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class="item"&gt;
+								&lt;div class="col-sm-6"&gt;
+									&lt;h1&gt;&lt;span&gt;Automation&lt;/span&gt;Exercise&lt;/h1&gt;
+									&lt;h2&gt;Full-Fledged practice website for Automation Engineers&lt;/h2&gt;
+									&lt;p&gt;All QA engineers can use this website for automation practice and API testing either they are at beginner or advance level. This is for everybody to help them brush up their automation skills.&lt;/p&gt;
+									&lt;a href="/test_cases" class="test_cases_list"&gt;&lt;button type="button" class="btn btn-success"&gt;Test Cases&lt;/button&gt;&lt;/a&gt;
+									&lt;a href="/api_list" class="apis_list"&gt;&lt;button type="button" class="btn btn-success"&gt;APIs list for practice&lt;/button&gt;&lt;/a&gt;
+								&lt;/div&gt;
+								&lt;div class="col-sm-6"&gt;
+									&lt;img src="/static/images/home/girl1.jpg" class="girl img-responsive" alt="demo website for practice" /&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class="item"&gt;
+								&lt;div class="col-sm-6"&gt;
+									&lt;h1&gt;&lt;span&gt;Automation&lt;/span&gt;Exercise&lt;/h1&gt;
+									&lt;h2&gt;Full-Fledged practice website for Automation Engineers&lt;/h2&gt;
+									&lt;p&gt;All QA engineers can use this website for automation practice and API testing either they are at beginner or advance level. This is for everybody to help them brush up their automation skills.&lt;/p&gt;
+									&lt;a href="/test_cases" class="test_cases_list"&gt;&lt;button type="button" class="btn btn-success"&gt;Test Cases&lt;/button&gt;&lt;/a&gt;
+									&lt;a href="/api_list" class="apis_list"&gt;&lt;button type="button" class="btn btn-success"&gt;APIs list for practice&lt;/button&gt;&lt;/a&gt;
+								&lt;/div&gt;
+								&lt;div class="col-sm-6"&gt;
+									&lt;img src="/static/images/home/girl3.jpg" class="girl img-responsive" alt="demo website for practice" /&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							
+						&lt;/div&gt;
+						
+						&lt;a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev"&gt;
+							&lt;i class="fa fa-angle-left"&gt;&lt;/i&gt;
+						&lt;/a&gt;
+						&lt;a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next"&gt;
+							&lt;i class="fa fa-angle-right"&gt;&lt;/i&gt;
+						&lt;/a&gt;
+					&lt;/div&gt;
+					
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+	
+	&lt;section&gt;
+		&lt;div class="container"&gt;
+			&lt;div class="row"&gt;
+				&lt;div class="col-sm-3"&gt;
+					&lt;div class="left-sidebar"&gt;
+						&lt;h2&gt;Category&lt;/h2&gt;
+						&lt;div class="panel-group category-products" id="accordian"&gt;
+							
+							&lt;div class="panel panel-default"&gt;
+								&lt;div class="panel-heading"&gt;
+									&lt;h4 class="panel-title"&gt;
+										&lt;a data-toggle="collapse" data-parent="#accordian" href="#Women"&gt;
+											&lt;span class="badge pull-right"&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt;&lt;/span&gt;
+											Women
+										&lt;/a&gt;
+									&lt;/h4&gt;
+								&lt;/div&gt;
+								&lt;div id="Women" class="panel-collapse collapse"&gt;
+									&lt;div class="panel-body"&gt;
+										&lt;ul&gt;
+											
+											&lt;li&gt;&lt;a href="/category_products/1"&gt;Dress &lt;/a&gt;&lt;/li&gt;
+											
+											&lt;li&gt;&lt;a href="/category_products/2"&gt;Tops &lt;/a&gt;&lt;/li&gt;
+											
+											&lt;li&gt;&lt;a href="/category_products/7"&gt;Saree &lt;/a&gt;&lt;/li&gt;
+											
+										&lt;/ul&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							
+							&lt;div class="panel panel-default"&gt;
+								&lt;div class="panel-heading"&gt;
+									&lt;h4 class="panel-title"&gt;
+										&lt;a data-toggle="collapse" data-parent="#accordian" href="#Men"&gt;
+											&lt;span class="badge pull-right"&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt;&lt;/span&gt;
+											Men
+										&lt;/a&gt;
+									&lt;/h4&gt;
+								&lt;/div&gt;
+								&lt;div id="Men" class="panel-collapse collapse"&gt;
+									&lt;div class="panel-body"&gt;
+										&lt;ul&gt;
+											
+											&lt;li&gt;&lt;a href="/category_products/3"&gt;Tshirts &lt;/a&gt;&lt;/li&gt;
+											
+											&lt;li&gt;&lt;a href="/category_products/6"&gt;Jeans &lt;/a&gt;&lt;/li&gt;
+											
+										&lt;/ul&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							
+							&lt;div class="panel panel-default"&gt;
+								&lt;div class="panel-heading"&gt;
+									&lt;h4 class="panel-title"&gt;
+										&lt;a data-toggle="collapse" data-parent="#accordian" href="#Kids"&gt;
+											&lt;span class="badge pull-right"&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt;&lt;/span&gt;
+											Kids
+										&lt;/a&gt;
+									&lt;/h4&gt;
+								&lt;/div&gt;
+								&lt;div id="Kids" class="panel-collapse collapse"&gt;
+									&lt;div class="panel-body"&gt;
+										&lt;ul&gt;
+											
+											&lt;li&gt;&lt;a href="/category_products/4"&gt;Dress &lt;/a&gt;&lt;/li&gt;
+											
+											&lt;li&gt;&lt;a href="/category_products/5"&gt;Tops &amp;amp; Shirts &lt;/a&gt;&lt;/li&gt;
+											
+										&lt;/ul&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							
+						&lt;/div&gt;
+					
+						&lt;div class="brands_products"&gt;
+							&lt;h2&gt;Brands&lt;/h2&gt;
+							&lt;div class="brands-name"&gt;
+								&lt;ul class="nav nav-pills nav-stacked"&gt;
+									
+									&lt;li&gt;&lt;a href="/brand_products/Polo"&gt; &lt;span class="pull-right"&gt;(6)&lt;/span&gt;Polo&lt;/a&gt;&lt;/li&gt;
+									
+									&lt;li&gt;&lt;a href="/brand_products/H&amp;amp;M"&gt; &lt;span class="pull-right"&gt;(5)&lt;/span&gt;H&amp;amp;M&lt;/a&gt;&lt;/li&gt;
+									
+									&lt;li&gt;&lt;a href="/brand_products/Madame"&gt; &lt;span class="pull-right"&gt;(5)&lt;/span&gt;Madame&lt;/a&gt;&lt;/li&gt;
+									
+									&lt;li&gt;&lt;a href="/brand_products/Mast &amp;amp; Harbour"&gt; &lt;span class="pull-right"&gt;(3)&lt;/span&gt;Mast &amp;amp; Harbour&lt;/a&gt;&lt;/li&gt;
+									
+									&lt;li&gt;&lt;a href="/brand_products/Babyhug"&gt; &lt;span class="pull-right"&gt;(4)&lt;/span&gt;Babyhug&lt;/a&gt;&lt;/li&gt;
+									
+									&lt;li&gt;&lt;a href="/brand_products/Allen Solly Junior"&gt; &lt;span class="pull-right"&gt;(3)&lt;/span&gt;Allen Solly Junior&lt;/a&gt;&lt;/li&gt;
+									
+									&lt;li&gt;&lt;a href="/brand_products/Kookie Kids"&gt; &lt;span class="pull-right"&gt;(3)&lt;/span&gt;Kookie Kids&lt;/a&gt;&lt;/li&gt;
+									
+									&lt;li&gt;&lt;a href="/brand_products/Biba"&gt; &lt;span class="pull-right"&gt;(5)&lt;/span&gt;Biba&lt;/a&gt;&lt;/li&gt;... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<status status="PASS" starttime="20231114 02:11:00.855" endtime="20231114 02:11:01.993"/>
+</kw>
+<status status="PASS" starttime="20231114 02:11:00.855" endtime="20231114 02:11:01.993"/>
+</test>
+<doc>Test Product API of the backend</doc>
+<status status="FAIL" starttime="20231114 02:11:00.735" endtime="20231114 02:11:01.996"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="Api">Api</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

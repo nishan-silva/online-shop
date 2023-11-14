@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20231114 02:03:02.881" rpa="false" schemaversion="4">
+<suite id="s1" name="Api" source="C:\Automation\online-shop\TestSuites\api.robot">
+<test id="s1-t1" name="GET /api/productsList" line="13">
+<status status="FAIL" starttime="20231114 02:03:03.009" endtime="20231114 02:03:03.010">Test cannot be empty.</status>
+</test>
+<test id="s1-t2" name="${response}=" line="14">
+<kw name="GET" library="RequestsLibrary">
+<arg>${URL}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20231114 02:03:03.012" level="FAIL">Variable '${URL}' not found.</msg>
+<status status="FAIL" starttime="20231114 02:03:03.012" endtime="20231114 02:03:03.012"/>
+</kw>
+<status status="FAIL" starttime="20231114 02:03:03.011" endtime="20231114 02:03:03.012">Variable '${URL}' not found.</status>
+</test>
+<doc>Test Product API of the backend</doc>
+<status status="FAIL" starttime="20231114 02:03:02.890" endtime="20231114 02:03:03.012"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Api">Api</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231114 02:03:02.999" level="ERROR">Error in file 'C:\Automation\online-shop\TestSuites\api.robot' on line 7: Setting variable '${URL}' failed: Variable '${ENV_BACKEND_HOST}' not found.</msg>
+</errors>
+</robot>
