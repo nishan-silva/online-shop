@@ -45,7 +45,7 @@ Environment Setup
     robot -A "ArgumentFiles/aws.args" "TestSuites/api.robot"
 
 
-**Git Command**
+**Git Commands**
 
     git add .
     git commit -m "readme file edited"
