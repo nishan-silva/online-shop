@@ -1,0 +1,2 @@
+USER_REGISTRATION_SUCCESS= {"name": "Nishan Silva", "email": "nishan@gmail.com", "password": "nishan@1", "title": "Mr", "birth_date": "09", "birth_month": "", "birth_year": "1989", "firstname": "Nishan", "lastname": "Silva", "company": "Nishan (PVT) Ltd", "address1": "YO-Kyla 32 A 01", "address2": "", "country": "", "zipcode": "20540", "state": "Los angeles", "city": "California", "mobile_number": "041123456"}
+EMAIL= nishan@gmail.com
