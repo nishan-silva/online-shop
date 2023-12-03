@@ -1,335 +1,452 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.6 on darwin)" generated="20231203 16:26:33.984" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.6 on darwin)" generated="20231203 18:00:57.642" rpa="false" schemaversion="4">
 <suite id="s1" name="Api" source="/Users/nishansilva/Test_Automation/online-shop/TestSuites/api.robot">
-<test id="s1-t1" name="POST /api/createAccount" line="14">
+<test id="s1-t1" name="POST /api/createAccount" line="13">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231203 16:26:34.067" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231203 16:26:34.067" endtime="20231203 16:26:34.067"/>
+<msg timestamp="20231203 18:00:57.753" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231203 18:00:57.753" endtime="20231203 18:00:57.753"/>
 </kw>
 <kw name="Get Variable Value" library="BuiltIn">
 <var>${user_registration_success}</var>
 <arg>${USER_REGISTRATION_SUCCESS}</arg>
 <doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<msg timestamp="20231203 16:26:34.068" level="INFO">${user_registration_success} = None</msg>
-<status status="PASS" starttime="20231203 16:26:34.067" endtime="20231203 16:26:34.068"/>
+<msg timestamp="20231203 18:00:57.754" level="INFO">${user_registration_success} = {'name': 'Nishan Silva', 'email': 'nishan@gmail.com', 'password': 'nishan@1', 'title': 'Mr', 'birth_date': '09', 'birth_month': '', 'birth_year': '1989', 'firstname': 'Nishan', 'lastname': 'Silva', 'c...</msg>
+<status status="PASS" starttime="20231203 18:00:57.753" endtime="20231203 18:00:57.754"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${body}</var>
 <arg>$user_registration_success</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231203 16:26:34.071" level="INFO">${body} = None</msg>
-<status status="PASS" starttime="20231203 16:26:34.068" endtime="20231203 16:26:34.071"/>
+<msg timestamp="20231203 18:00:57.756" level="INFO">${body} = {'name': 'Nishan Silva', 'email': 'nishan@gmail.com', 'password': 'nishan@1', 'title': 'Mr', 'birth_date': '09', 'birth_month': '', 'birth_year': '1989', 'firstname': 'Nishan', 'lastname': 'Silva', 'c...</msg>
+<status status="PASS" starttime="20231203 18:00:57.754" endtime="20231203 18:00:57.756"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231203 16:26:34.071" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20231203 16:26:34.071" endtime="20231203 16:26:34.071"/>
+<msg timestamp="20231203 18:00:57.757" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231203 18:00:57.756" endtime="20231203 18:00:57.757"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
 <arg>${URL}/api/createAccount</arg>
 <arg>data=${body}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20231203 16:26:35.094" level="INFO">POST Request : url=https://automationexercise.com/api/createAccount 
+<msg timestamp="20231203 18:00:58.778" level="INFO">POST Request : url=https://automationexercise.com/api/createAccount 
  path_url=/api/createAccount 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
- body=None 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '291', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=name=Nishan+Silva&amp;email=nishan%40gmail.com&amp;password=nishan%401&amp;title=Mr&amp;birth_date=09&amp;birth_month=&amp;birth_year=1989&amp;firstname=Nishan&amp;lastname=Silva&amp;company=Nishan+%28PVT%29+Ltd&amp;address1=YO-Kyla+32+A+01&amp;address2=&amp;country=&amp;zipcode=20540&amp;state=Los+angeles&amp;city=California&amp;mobile_number=041123456 
  </msg>
-<msg timestamp="20231203 16:26:35.094" level="INFO">POST Response : url=https://automationexercise.com/api/createAccount 
+<msg timestamp="20231203 18:00:58.778" level="INFO">POST Response : url=https://automationexercise.com/api/createAccount 
  status=200, reason=OK 
- headers={'Date': 'Sun, 03 Dec 2023 14:26:35 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'POST, OPTIONS', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=9wgAWVdaXiHHhZjnUo3wXy34S4swBYmHPX%2Fs%2FWNvh8LUTje41rF8p2yaF%2Bai%2FU0XN6joG3F5yjyr3wkKqFhyznHsq2AmWzL2ELQdbzs%2B07s8Fx7DPPhaA%2BV1uzlLWAJagcUXJN7Uh6Hu"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fc7c439ce4d90a-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
- body={"responseCode": 400, "message": "Bad request, name parameter is missing in POST request."} 
+ headers={'Date': 'Sun, 03 Dec 2023 16:00:58 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'POST, OPTIONS', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=zBpbtMltb4H7gdpi2mf53fTphTl2nQqhPAsfy0RsLjtLMGcRDisoGigT7b4IdHqglDoZbDNUcvhWMyOWVlfmFwxRDDYce94JSpe6BJkOMIrR7oKcFBH4WuscUrMOg0%2B9KYBVtbqPaTHV"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fd068aa8f5d97b-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"responseCode": 400, "message": "Email already exists!"} 
  </msg>
-<msg timestamp="20231203 16:26:35.094" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20231203 16:26:34.071" endtime="20231203 16:26:35.094"/>
+<msg timestamp="20231203 18:00:58.779" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231203 18:00:57.757" endtime="20231203 18:00:58.779"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 16:26:35.095" endtime="20231203 16:26:35.095"/>
+<status status="PASS" starttime="20231203 18:00:58.779" endtime="20231203 18:00:58.779"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 16:26:35.095" endtime="20231203 16:26:35.096"/>
+<status status="PASS" starttime="20231203 18:00:58.780" endtime="20231203 18:00:58.780"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.headers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 16:26:35.096" endtime="20231203 16:26:35.097"/>
+<status status="PASS" starttime="20231203 18:00:58.780" endtime="20231203 18:00:58.781"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20231203 16:26:35.098" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20231203 16:26:35.097" endtime="20231203 16:26:35.098"/>
+<msg timestamp="20231203 18:00:58.782" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20231203 18:00:58.781" endtime="20231203 18:00:58.782"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20231203 16:26:35.098" endtime="20231203 16:26:35.098"/>
+<status status="PASS" starttime="20231203 18:00:58.782" endtime="20231203 18:00:58.782"/>
 </kw>
-<status status="PASS" starttime="20231203 16:26:34.066" endtime="20231203 16:26:35.098"/>
+<status status="PASS" starttime="20231203 18:00:57.753" endtime="20231203 18:00:58.782"/>
 </test>
-<test id="s1-t2" name="GET /api/getUserDetailByEmail" line="28">
+<test id="s1-t2" name="PUT /api/updateAccount" line="27">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231203 16:26:35.099" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231203 16:26:35.098" endtime="20231203 16:26:35.099"/>
+<msg timestamp="20231203 18:00:58.783" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231203 18:00:58.783" endtime="20231203 18:00:58.783"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${update_user_details}</var>
+<arg>${UPDATE_USER_DETAILS}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20231203 18:00:58.783" level="INFO">${update_user_details} = {'name': 'NishanS', 'email': 'nishan@gmail.com', 'password': 'nishan@1', 'title': 'Mr', 'birth_date': '10', 'birth_month': '', 'birth_year': '1990', 'firstname': 'Nishaan', 'lastname': 'Silvaa', 'comp...</msg>
+<status status="PASS" starttime="20231203 18:00:58.783" endtime="20231203 18:00:58.783"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${body}</var>
+<arg>$update_user_details</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231203 18:00:58.784" level="INFO">${body} = {'name': 'NishanS', 'email': 'nishan@gmail.com', 'password': 'nishan@1', 'title': 'Mr', 'birth_date': '10', 'birth_month': '', 'birth_year': '1990', 'firstname': 'Nishaan', 'lastname': 'Silvaa', 'comp...</msg>
+<status status="PASS" starttime="20231203 18:00:58.783" endtime="20231203 18:00:58.784"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231203 16:26:35.099" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20231203 16:26:35.099" endtime="20231203 16:26:35.099"/>
+<msg timestamp="20231203 18:00:58.784" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231203 18:00:58.784" endtime="20231203 18:00:58.784"/>
 </kw>
-<kw name="GET" library="RequestsLibrary">
+<kw name="PUT" library="RequestsLibrary">
 <var>${response}</var>
-<arg>${URL}/api/getUserDetailByEmail?email=${EMAIL}</arg>
-<doc>Sends a GET request.</doc>
-<msg timestamp="20231203 16:26:35.100" level="FAIL">Variable '${EMAIL}' not found.</msg>
-<status status="FAIL" starttime="20231203 16:26:35.099" endtime="20231203 16:26:35.100"/>
+<arg>${URL}/api/updateAccount</arg>
+<arg>data=${body}</arg>
+<doc>Sends a PUT request.</doc>
+<msg timestamp="20231203 18:01:00.224" level="INFO">PUT Request : url=https://automationexercise.com/api/updateAccount 
+ path_url=/api/updateAccount 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '273', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=name=NishanS&amp;email=nishan%40gmail.com&amp;password=nishan%401&amp;title=Mr&amp;birth_date=10&amp;birth_month=&amp;birth_year=1990&amp;firstname=Nishaan&amp;lastname=Silvaa&amp;company=NishanS+%28PVT%29+Ltd&amp;address1=YO-Kyla&amp;address2=&amp;country=&amp;zipcode=53430&amp;state=Turku&amp;city=Finland&amp;mobile_number=0514723240 
+ </msg>
+<msg timestamp="20231203 18:01:00.224" level="INFO">PUT Response : url=https://automationexercise.com/api/updateAccount 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 03 Dec 2023 16:01:00 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'OPTIONS, PUT', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=jpSSrUKdZqVZd6gkbaz%2F84pv85V96hzPlUnkGa2BIE%2BJiqS2yxeFLuKF2OuzVmOJNkMYbgcGHyDx%2BuzQ3iMHXf%2BIz8KSGXexgryX9WwbWUqcKkXBLjwVEE9mvrKoMqOh%2BvOCCxC5%2B7II"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fd06946e34d95f-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"responseCode": 200, "message": "User updated!"} 
+ </msg>
+<msg timestamp="20231203 18:01:00.224" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231203 18:00:58.785" endtime="20231203 18:01:00.224"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20231203 16:26:35.100" endtime="20231203 16:26:35.100"/>
+<status status="PASS" starttime="20231203 18:01:00.224" endtime="20231203 18:01:00.225"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20231203 16:26:35.100" endtime="20231203 16:26:35.100"/>
+<status status="PASS" starttime="20231203 18:01:00.225" endtime="20231203 18:01:00.225"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.headers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20231203 16:26:35.100" endtime="20231203 16:26:35.100"/>
+<status status="PASS" starttime="20231203 18:01:00.225" endtime="20231203 18:01:00.226"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<status status="NOT RUN" starttime="20231203 16:26:35.101" endtime="20231203 16:26:35.101"/>
+<msg timestamp="20231203 18:01:00.226" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20231203 18:01:00.226" endtime="20231203 18:01:00.226"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="NOT RUN" starttime="20231203 16:26:35.101" endtime="20231203 16:26:35.101"/>
+<status status="PASS" starttime="20231203 18:01:00.227" endtime="20231203 18:01:00.227"/>
 </kw>
-<status status="FAIL" starttime="20231203 16:26:35.098" endtime="20231203 16:26:35.101">Variable '${EMAIL}' not found.</status>
+<status status="PASS" starttime="20231203 18:00:58.782" endtime="20231203 18:01:00.227"/>
 </test>
-<test id="s1-t3" name="GET /api/productsList" line="40">
+<test id="s1-t3" name="GET /api/productsList" line="41">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231203 16:26:35.101" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231203 16:26:35.101" endtime="20231203 16:26:35.102"/>
+<msg timestamp="20231203 18:01:00.227" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231203 18:01:00.227" endtime="20231203 18:01:00.228"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231203 16:26:35.102" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20231203 16:26:35.102" endtime="20231203 16:26:35.102"/>
+<msg timestamp="20231203 18:01:00.228" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231203 18:01:00.228" endtime="20231203 18:01:00.228"/>
 </kw>
 <kw name="GET" library="RequestsLibrary">
 <var>${response}</var>
 <arg>${URL}/api/productsList</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20231203 16:26:36.129" level="INFO">GET Request : url=https://automationexercise.com/api/productsList 
+<msg timestamp="20231203 18:01:00.606" level="INFO">GET Request : url=https://automationexercise.com/api/productsList 
  path_url=/api/productsList 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20231203 16:26:36.129" level="INFO">GET Response : url=https://automationexercise.com/api/productsList 
+<msg timestamp="20231203 18:01:00.606" level="INFO">GET Response : url=https://automationexercise.com/api/productsList 
  status=200, reason=OK 
- headers={'Date': 'Sun, 03 Dec 2023 14:26:36 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'DELETE, OPTIONS, PUT, GET, POST', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=65pd%2BDvAeb16j6zGl4HDmxDwF0CVkFh1JQ2i9CIkOxd1syaxq5GfDJ3OC0qEYmvE2Gwuv8DKFRbRjvO8H6mWGFGYhnzS0gN98%2BmAnBFfz0iHX7pLTa1TzIrp8jE0Ugz2WaMjAhEJDuqE"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fc7c4a5aed3bca-WAW', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ headers={'Date': 'Sun, 03 Dec 2023 16:01:00 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'DELETE, OPTIONS, PUT, GET, POST', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=E4EVzCgoSyDpyLOO0m7sKaAjN5rQWyaNGSHfqfVt9DT1zlruXXmVUx0Bl5ASnoPatEas2zJ4hYc%2Fc71MAAQigYASIOj7TbOESBi8I2B%2B8i2dsZlqMHKL9VFa%2FOIGj3cmW0mM5j65zEt5"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fd069a1afcd93f-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
  body={"responseCode": 200, "products": [{"id": 1, "name": "Blue Top", "price": "Rs. 500", "brand": "Polo", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 2, "name": "Men Tshirt", "price": "Rs. 400", "brand": "H&amp;M", "category": {"usertype": {"usertype": "Men"}, "category": "Tshirts"}}, {"id": 3, "name": "Sleeveless Dress", "price": "Rs. 1000", "brand": "Madame", "category": {"usertype": {"usertype": "Women"}, "category": "Dress"}}, {"id": 4, "name": "Stylish Dress", "price": "Rs. 1500", "brand": "Madame", "category": {"usertype": {"usertype": "Women"}, "category": "Dress"}}, {"id": 5, "name": "Winter Top", "price": "Rs. 600", "brand": "Mast &amp; Harbour", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 6, "name": "Summer White Top", "price": "Rs. 400", "brand": "H&amp;M", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 7, "name": "Madame Top For Women", "price": "Rs. 1000", "brand": "Madame", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 8, "name": "Fancy Green Top", "price": "Rs. 700", "brand": "Polo", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 11, "name": "Sleeves Printed Top - White", "price": "Rs. 499", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 12, "name": "Half Sleeves Top Schiffli Detailing - Pink", "price": "Rs. 359", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 13, "name": "Frozen Tops For Kids", "price": "Rs. 278", "brand": "Allen Solly Junior", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 14, "name": "Full Sleeves Top Cherry - Pink", "price": "Rs. 679", "brand": "Kookie Kids", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 15, "name": "Printed Off Shoulder Top - White", "price": "Rs. 315", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 16, "name": "Sleeves Top and Short - Blue &amp; Pink", "price": "Rs. 478", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Dress"}}, {"id": 18, "name": "Little Girls Mr. Panda Shirt", "price": "Rs. 1200", "brand": "Kookie Kids", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 19, "name": "Sleeveless Unicorn Patch Gown - Pink", "price": "Rs. 1050", "brand": "Allen Solly Junior", "category": {"usertype": {"usertype": "Kids"}, "category": "Dress"}}, {"id": 20, "name": "Cotton Mull Embroidered Dress", "price": "Rs. 1190", "brand": "Kookie Kids", "category": {"usertype": {"usertype": "Kids"}, "category": "Dress"}}, {"id": 21, "name": "Blue Cotton Indie Mickey Dress", "price": "Rs. 1530", "brand": "Biba", "category": {"usertype": {"usertype": "Kids"}, "category": "Dress"}}, {"id": 22, "name": "Long Maxi Tulle Fancy Dress Up Outfits -Pink", "price": "Rs. 1600", "brand": "Biba", "category": {"usertype": {"usertype": "Kids"}, "category": "Dress"}}, {"id": 23, "name": "Sleeveless Unicorn Print Fit &amp; Flare Net Dress - Multi", "price": "Rs. 1100", "brand": "Biba", "category": {"usertype": {"usertype": "Kids"}, "category": "Dress"}}, {"id": 24, "name": "Colour Blocked Shirt \u2013 Sky Blue", "price": "Rs. 849", "brand": "Allen Solly Junior", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 28, "name": "Pure Cotton V-Neck T-Shirt", "price": "Rs. 1299", "brand": "H&amp;M", "category": {"usertype": {"usertype": "Men"}, "category": "Tshirts"}}, {"id": 29, "name": "Green Side Placket Detail T-Shirt", "price": "Rs. 1000", "brand": "Polo", "category": {"usertype": {"usertype": "Men"}, "category": "Tshirts"}}, {"id": 30, "name": "Premium Polo T-Shirts", "price": "Rs. 1500", "brand": "Polo", "category": {"usertype": {"usertype": "Men"}, "category": "Tshirts"}}, {"id": 31, "name": "Pure Cotton Neon Green Tshirt", "price": "Rs. 850", "brand": "H&amp;M", "category": {"usertype": {"usertype": "Men"}, "category": "Tshirts"}}, {"id": 33, "name": "Soft Stretch Jeans", "price": "Rs. 799", "brand": "Polo", "category": {"usertype": {"usertype": "Men"}, "category": "Jeans"}}, {"id": 35, "name": "Regular Fit Straight Jeans", "price": "Rs. 1200", "brand": "H&amp;M", "category": {"usertype": {"usertype": "Men"}, "category": "Jeans"}}, {"id": 37, "name": "Grunt Blue Slim Fit Jeans", "price": "Rs. 1400", "brand": "Polo", "category": {"usertype": {"usertype": "Men"}, "category": "Jeans"}}, {"id": 38, "name": "Rose Pink Embroidered Maxi Dress", "price": "Rs. 2300", "brand": "Madame", "category": {"usertype": {"usertype": "Women"}, "category": "Dress"}}, {"id": 39, "name": "Cotton Silk Hand Block Print Saree", "price": "Rs. 3000", "brand": "Biba", "category": {"usertype": {"usertype": "Women"}, "category": "Saree"}}, {"id": 40, "name": "Rust Red Linen Saree", "price": "Rs. 3500", "brand": "Biba", "category": {"usertype": {"usertype": "Women"}, "category": "Saree"}}, {"id": 41, "name": "Beautiful Peacock Blue Cotton Linen Saree", "price": "Rs. 5000", "brand": "Madame", "category": {"usertype": {"usertype": "Women"}, "category": "Saree"}}, {"id": 42, "name": "Lace Top For Women", "price": "Rs. 1400", "brand": "Mast &amp; Harbour", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 43, "name": "GRAPHIC DESIGN MEN T SHIRT - BLUE", "price": "Rs. 1389", "brand": "Mast &amp; Harbour", "category": {"usertype": {"usertype": "Men"}, "category": "Tshirts"}}]} 
  </msg>
-<msg timestamp="20231203 16:26:36.129" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20231203 16:26:35.102" endtime="20231203 16:26:36.129"/>
+<msg timestamp="20231203 18:01:00.607" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231203 18:01:00.228" endtime="20231203 18:01:00.607"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 16:26:36.130" endtime="20231203 16:26:36.130"/>
+<status status="PASS" starttime="20231203 18:01:00.607" endtime="20231203 18:01:00.607"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 16:26:36.130" endtime="20231203 16:26:36.131"/>
+<status status="PASS" starttime="20231203 18:01:00.607" endtime="20231203 18:01:00.608"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.headers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 16:26:36.131" endtime="20231203 16:26:36.132"/>
+<status status="PASS" starttime="20231203 18:01:00.609" endtime="20231203 18:01:00.609"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20231203 16:26:36.132" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20231203 16:26:36.132" endtime="20231203 16:26:36.132"/>
+<msg timestamp="20231203 18:01:00.610" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20231203 18:01:00.609" endtime="20231203 18:01:00.610"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20231203 16:26:36.133" endtime="20231203 16:26:36.133"/>
+<status status="PASS" starttime="20231203 18:01:00.610" endtime="20231203 18:01:00.610"/>
 </kw>
-<status status="PASS" starttime="20231203 16:26:35.101" endtime="20231203 16:26:36.133"/>
+<status status="PASS" starttime="20231203 18:01:00.227" endtime="20231203 18:01:00.610"/>
 </test>
-<test id="s1-t4" name="PUT /api/updateAccount" line="52">
+<test id="s1-t4" name=" POST /api/Search Product" line="53">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231203 16:26:36.133" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231203 16:26:36.133" endtime="20231203 16:26:36.134"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${body}</var>
-<arg>name=, email, password, title (for example: Mr, Mrs, Miss), birth_date, birth_month, birth_year, firstname, lastname, company, address1, address2, country, zipcode, state, city, mobile_number</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231203 16:26:36.134" level="INFO">${body} = {'name': ', email, password, title (for example: Mr, Mrs, Miss), birth_date, birth_month, birth_year, firstname, lastname, company, address1, address2, country, zipcode, state, city, mobile_number'}</msg>
-<status status="PASS" starttime="20231203 16:26:36.134" endtime="20231203 16:26:36.134"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${header}</var>
-<arg>Content-Type=application/json</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231203 16:26:36.134" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20231203 16:26:36.134" endtime="20231203 16:26:36.134"/>
-</kw>
-<kw name="POST" library="RequestsLibrary">
-<var>${response}</var>
-<arg>${URL}/api/searchProduct</arg>
-<arg>data=${body}</arg>
-<doc>Sends a POST request.</doc>
-<msg timestamp="20231203 16:26:37.363" level="INFO">POST Request : url=https://automationexercise.com/api/searchProduct 
- path_url=/api/searchProduct 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '233', 'Content-Type': 'application/x-www-form-urlencoded'} 
- body=name=%2C+email%2C+password%2C+title+%28for+example%3A+Mr%2C+Mrs%2C+Miss%29%2C+birth_date%2C+birth_month%2C+birth_year%2C+firstname%2C+lastname%2C+company%2C+address1%2C+address2%2C+country%2C+zipcode%2C+state%2C+city%2C+mobile_number 
- </msg>
-<msg timestamp="20231203 16:26:37.363" level="INFO">POST Response : url=https://automationexercise.com/api/searchProduct 
- status=200, reason=OK 
- headers={'Date': 'Sun, 03 Dec 2023 14:26:37 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'DELETE, OPTIONS, PUT, GET, POST', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=SA7Ls9s4NKynMGg%2Bs0PzieVsGxOKKIagARVgXAfqJlX8oFHIk0gWGRhvojBepDNOQL89gJXBuZLfROB3LiiiVQxAHxSiO31rzOqX8%2BnH0cOBpqVXafSiCaA1VnPqs16wrPQaIWavw%2FZa"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fc7c508f3e4c78-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
- body={"responseCode": 400, "message": "Bad request, search_product parameter is missing in POST request."} 
- </msg>
-<msg timestamp="20231203 16:26:37.364" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20231203 16:26:36.134" endtime="20231203 16:26:37.364"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 16:26:37.364" endtime="20231203 16:26:37.364"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 16:26:37.364" endtime="20231203 16:26:37.365"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.headers}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 16:26:37.365" endtime="20231203 16:26:37.365"/>
-</kw>
-<status status="PASS" starttime="20231203 16:26:36.133" endtime="20231203 16:26:37.365"/>
-</test>
-<test id="s1-t5" name=" POST /api/Search Product" line="61">
-<kw name="Create Session" library="RequestsLibrary">
-<arg>mysession</arg>
-<arg>${URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231203 16:26:37.366" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231203 16:26:37.366" endtime="20231203 16:26:37.366"/>
+<msg timestamp="20231203 18:01:00.611" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231203 18:01:00.611" endtime="20231203 18:01:00.611"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
 <arg>search_product=top</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231203 16:26:37.366" level="INFO">${body} = {'search_product': 'top'}</msg>
-<status status="PASS" starttime="20231203 16:26:37.366" endtime="20231203 16:26:37.366"/>
+<msg timestamp="20231203 18:01:00.611" level="INFO">${body} = {'search_product': 'top'}</msg>
+<status status="PASS" starttime="20231203 18:01:00.611" endtime="20231203 18:01:00.611"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231203 16:26:37.367" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20231203 16:26:37.367" endtime="20231203 16:26:37.367"/>
+<msg timestamp="20231203 18:01:00.611" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231203 18:01:00.611" endtime="20231203 18:01:00.611"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
 <arg>${URL}/api/searchProduct</arg>
 <arg>data=${body}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20231203 16:26:38.376" level="INFO">POST Request : url=https://automationexercise.com/api/searchProduct 
+<msg timestamp="20231203 18:01:01.224" level="INFO">POST Request : url=https://automationexercise.com/api/searchProduct 
  path_url=/api/searchProduct 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '18', 'Content-Type': 'application/x-www-form-urlencoded'} 
  body=search_product=top 
  </msg>
-<msg timestamp="20231203 16:26:38.376" level="INFO">POST Response : url=https://automationexercise.com/api/searchProduct 
+<msg timestamp="20231203 18:01:01.224" level="INFO">POST Response : url=https://automationexercise.com/api/searchProduct 
  status=200, reason=OK 
- headers={'Date': 'Sun, 03 Dec 2023 14:26:38 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'DELETE, OPTIONS, PUT, GET, POST', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=KDBUctxlJFsFJgqIqOVxHWxPJBIHjkPkbmrlPN6IGw86aEK%2BZ76OyED7j9q5ayDxwbgYgE5VgQxmXSmppO6k2G%2BHNrWUltJ0tVGN5%2FziIMP0bewTDy%2Bidv9jWU3tYQxIzRmCzR5aludl"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fc7c585b9bd967-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ headers={'Date': 'Sun, 03 Dec 2023 16:01:01 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'DELETE, OPTIONS, PUT, GET, POST', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=gD9AO8wImIJT3bMcRFHlh8pq58R1toz26nmRdtq1CgEQWF%2FRIA4%2FdcusRp1YQXKCEq6nBhQGRVcgS%2BF8tWPb%2BG08SHQrFV81hAsmRAXEyef2N%2FtGcJVvlLZQNjdlHMwdZhEXngCPw0O%2F"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fd069c3a414c8a-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
  body={"responseCode": 200, "products": [{"id": 1, "name": "Blue Top", "price": "Rs. 500", "brand": "Polo", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 5, "name": "Winter Top", "price": "Rs. 600", "brand": "Mast &amp; Harbour", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 6, "name": "Summer White Top", "price": "Rs. 400", "brand": "H&amp;M", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 7, "name": "Madame Top For Women", "price": "Rs. 1000", "brand": "Madame", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 8, "name": "Fancy Green Top", "price": "Rs. 700", "brand": "Polo", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 11, "name": "Sleeves Printed Top - White", "price": "Rs. 499", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 12, "name": "Half Sleeves Top Schiffli Detailing - Pink", "price": "Rs. 359", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 13, "name": "Frozen Tops For Kids", "price": "Rs. 278", "brand": "Allen Solly Junior", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 14, "name": "Full Sleeves Top Cherry - Pink", "price": "Rs. 679", "brand": "Kookie Kids", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 15, "name": "Printed Off Shoulder Top - White", "price": "Rs. 315", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 16, "name": "Sleeves Top and Short - Blue &amp; Pink", "price": "Rs. 478", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Dress"}}, {"id": 18, "name": "Little Girls Mr. Panda Shirt", "price": "Rs. 1200", "brand": "Kookie Kids", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 24, "name": "Colour Blocked Shirt \u2013 Sky Blue", "price": "Rs. 849", "brand": "Allen Solly Junior", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 42, "name": "Lace Top For Women", "price": "Rs. 1400", "brand": "Mast &amp; Harbour", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}]} 
  </msg>
-<msg timestamp="20231203 16:26:38.378" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20231203 16:26:37.367" endtime="20231203 16:26:38.378"/>
+<msg timestamp="20231203 18:01:01.224" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231203 18:01:00.612" endtime="20231203 18:01:01.224"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 16:26:38.378" endtime="20231203 16:26:38.379"/>
+<status status="PASS" starttime="20231203 18:01:01.224" endtime="20231203 18:01:01.225"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 16:26:38.379" endtime="20231203 16:26:38.380"/>
+<status status="PASS" starttime="20231203 18:01:01.225" endtime="20231203 18:01:01.225"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.headers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 16:26:38.380" endtime="20231203 16:26:38.380"/>
+<status status="PASS" starttime="20231203 18:01:01.225" endtime="20231203 18:01:01.226"/>
 </kw>
-<status status="PASS" starttime="20231203 16:26:37.366" endtime="20231203 16:26:38.380"/>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20231203 18:01:01.227" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20231203 18:01:01.226" endtime="20231203 18:01:01.227"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231203 18:01:01.227" endtime="20231203 18:01:01.229"/>
+</kw>
+<status status="PASS" starttime="20231203 18:01:00.610" endtime="20231203 18:01:01.229"/>
+</test>
+<test id="s1-t5" name="GET /api/getUserDetailByEmail" line="66">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20231203 18:01:01.229" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231203 18:01:01.229" endtime="20231203 18:01:01.230"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${email}</var>
+<arg>${EMAIL}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20231203 18:01:01.230" level="INFO">${email} = nishan@gmail.com</msg>
+<status status="PASS" starttime="20231203 18:01:01.230" endtime="20231203 18:01:01.230"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${params}</var>
+<arg>email=${email}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231203 18:01:01.230" level="INFO">${params} = {'email': 'nishan@gmail.com'}</msg>
+<status status="PASS" starttime="20231203 18:01:01.230" endtime="20231203 18:01:01.230"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>url=${URL}/api/getUserDetailByEmail</arg>
+<arg>params=${params}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20231203 18:01:02.006" level="INFO">GET Request : url=https://automationexercise.com/api/getUserDetailByEmail?email=nishan%40gmail.com 
+ path_url=/api/getUserDetailByEmail?email=nishan%40gmail.com 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231203 18:01:02.007" level="INFO">GET Response : url=https://automationexercise.com/api/getUserDetailByEmail?email=nishan%40gmail.com 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 03 Dec 2023 16:01:02 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'DELETE, OPTIONS, PUT, GET, POST', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=Ry2B232Wk2seo4rBNPpS2fx8TpfVPAah%2BzP2XsVCGAhumgM%2BfaFW3TE32kaP4B3E%2FC8kQS3FIyMiPWPkFIX60Td8y0n%2F%2BOQ6YjexivTuvsuLb3OzS4stg3sru8gJ%2Bd0YLcE5vZyvVyoA"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fd06a01d794c8d-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"responseCode": 200, "user": {"id": 190384, "name": "NishanS", "email": "nishan@gmail.com", "title": "Mr", "birth_day": "10", "birth_month": "", "birth_year": "1990", "first_name": "Nishaan", "last_name": "Silvaa", "company": "NishanS (PVT) Ltd", "address1": "YO-Kyla", "address2": "", "country": "", "state": "Turku", "city": "Finland", "zipcode": "53430"}} 
+ </msg>
+<msg timestamp="20231203 18:01:02.007" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231203 18:01:01.230" endtime="20231203 18:01:02.007"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231203 18:01:02.007" endtime="20231203 18:01:02.007"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231203 18:01:02.008" endtime="20231203 18:01:02.008"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.headers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231203 18:01:02.008" endtime="20231203 18:01:02.009"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20231203 18:01:02.009" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20231203 18:01:02.009" endtime="20231203 18:01:02.009"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231203 18:01:02.009" endtime="20231203 18:01:02.010"/>
+</kw>
+<status status="PASS" starttime="20231203 18:01:01.229" endtime="20231203 18:01:02.010"/>
+</test>
+<test id="s1-t6" name="DELETE /api/deleteAccount" line="79">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20231203 18:01:02.010" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231203 18:01:02.010" endtime="20231203 18:01:02.010"/>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<var>${delete_user}</var>
+<arg>${DELETE_USER}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<msg timestamp="20231203 18:01:02.011" level="INFO">${delete_user} = {'email': 'nishan@gmail.com', 'password': 'nishan@1'}</msg>
+<status status="PASS" starttime="20231203 18:01:02.011" endtime="20231203 18:01:02.011"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${body}</var>
+<arg>$delete_user</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231203 18:01:02.011" level="INFO">${body} = {'email': 'nishan@gmail.com', 'password': 'nishan@1'}</msg>
+<status status="PASS" starttime="20231203 18:01:02.011" endtime="20231203 18:01:02.011"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231203 18:01:02.011" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231203 18:01:02.011" endtime="20231203 18:01:02.011"/>
+</kw>
+<kw name="DELETE" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${URL}/api/deleteAccount</arg>
+<arg>data=${body}</arg>
+<doc>Sends a DELETE request.</doc>
+<msg timestamp="20231203 18:01:02.819" level="INFO">DELETE Request : url=https://automationexercise.com/api/deleteAccount 
+ path_url=/api/deleteAccount 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '44', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=email=nishan%40gmail.com&amp;password=nishan%401 
+ </msg>
+<msg timestamp="20231203 18:01:02.819" level="INFO">DELETE Response : url=https://automationexercise.com/api/deleteAccount 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 03 Dec 2023 16:01:02 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'DELETE, OPTIONS', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=hkqYYSBo05m52reaIZIFUW4MkJWf6dOenn1Ld3R%2FVdGxL8ajfVDoBO9e9jaHKzRIfFQ74uca1%2BWLy5%2F93wSx4Y%2FH6TVYHu0GgKN9lMjVCjqgEeGLdcf4fYDgMC5tdT9ssGpxy4cepS5d"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fd06a4ff464c81-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"responseCode": 200, "message": "Account deleted!"} 
+ </msg>
+<msg timestamp="20231203 18:01:02.819" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231203 18:01:02.012" endtime="20231203 18:01:02.819"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231203 18:01:02.819" endtime="20231203 18:01:02.820"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231203 18:01:02.820" endtime="20231203 18:01:02.820"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.headers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231203 18:01:02.820" endtime="20231203 18:01:02.821"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20231203 18:01:02.822" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20231203 18:01:02.821" endtime="20231203 18:01:02.822"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231203 18:01:02.822" endtime="20231203 18:01:02.822"/>
+</kw>
+<status status="PASS" starttime="20231203 18:01:02.010" endtime="20231203 18:01:02.822"/>
 </test>
 <doc>Test Product API of the backend</doc>
-<status status="FAIL" starttime="20231203 16:26:33.985" endtime="20231203 16:26:38.381"/>
+<status status="PASS" starttime="20231203 18:00:57.643" endtime="20231203 18:01:02.823"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="1" skip="0">All Tests</stat>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="4" fail="1" skip="0" id="s1" name="Api">Api</stat>
+<stat pass="6" fail="0" skip="0" id="s1" name="Api">Api</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20231203 16:26:34.066" level="ERROR">Error in file '/Users/nishansilva/Test_Automation/online-shop/TestSuites/api.robot' on line 6: Processing variable file '/Users/nishansilva/Test_Automation/online-shop/TestData/TestData.py' failed: Importing variable file '/Users/nishansilva/Test_Automation/online-shop/TestData/TestData.py' failed: NameError: name 'nishan' is not defined
-Traceback (most recent call last):
-  File "/Users/nishansilva/Test_Automation/online-shop/TestData/TestData.py", line 2, in &lt;module&gt;
-    EMAIL= nishan@gmail.com
-           ^^^^^^
-PYTHONPATH:
-  /Users/nishansilva/Test_Automation/online-shop/TestData
-  /usr/local/bin
-  /usr/local/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python311.zip
-  /usr/local/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11
-  /usr/local/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload
-  /usr/local/lib/python3.11/site-packages</msg>
 </errors>
 </robot>

@@ -1,2 +1,4 @@
 USER_REGISTRATION_SUCCESS= {"name": "Nishan Silva", "email": "nishan@gmail.com", "password": "nishan@1", "title": "Mr", "birth_date": "09", "birth_month": "", "birth_year": "1989", "firstname": "Nishan", "lastname": "Silva", "company": "Nishan (PVT) Ltd", "address1": "YO-Kyla 32 A 01", "address2": "", "country": "", "zipcode": "20540", "state": "Los angeles", "city": "California", "mobile_number": "041123456"}
-EMAIL= nishan@gmail.com
+EMAIL= "nishan@gmail.com"
+UPDATE_USER_DETAILS= {"name": "NishanS", "email": "nishan@gmail.com", "password": "nishan@1", "title": "Mr", "birth_date": "10", "birth_month": "", "birth_year": "1990", "firstname": "Nishaan", "lastname": "Silvaa", "company": "NishanS (PVT) Ltd", "address1": "YO-Kyla", "address2": "", "country": "", "zipcode": "53430", "state": "Turku", "city": "Finland", "mobile_number": "0514723240"}
+DELETE_USER= {"email": "nishan@gmail.com", "password": "nishan@1"}
