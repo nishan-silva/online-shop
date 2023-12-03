@@ -19,10 +19,19 @@ POST /api/createAccount
     Log To Console    ${response.status_code}
     Log To Console    ${response.content}
     Log To Console    ${response.headers}
+    ${json_object}=    Evaluate    json.loads($response.content)    json
 
-    #Validations
+    #Status code validation
     ${status_code}=    Convert To String    ${response.status_code}
     Should Be Equal    ${status_code}    200
+
+    #Single data validation
+    ${response_code}=    Get From Dictionary    ${json_object}    responseCode
+    ${create_account_message}=    Get From Dictionary    ${json_object}    message
+    Log To Console    ${response_code}
+    Log To Console    ${create_account_message}
+    Should Be Equal As Strings    ${response_code}    201
+    Should Be Equal As Strings    ${create_account_message}    User created!
 
 PUT /api/updateAccount
      Create Session    mysession    ${URL}
@@ -33,10 +42,19 @@ PUT /api/updateAccount
      Log To Console    ${response.status_code}
      Log To Console    ${response.content}
      Log To Console    ${response.headers}
+     ${json_object}=    Evaluate    json.loads($response.content)    json
 
-    #Validations
+    #Status code validation
     ${status_code}=    Convert To String    ${response.status_code}
     Should Be Equal    ${status_code}    200
+
+    # Multiple data validation
+    ${response_code}=    Get From Dictionary    ${json_object}    responseCode
+    ${user_updated_message}=    Get From Dictionary    ${json_object}    message
+    Log To Console    ${response_code}
+    Log To Console    ${user_updated_message}
+    Should Be Equal As Strings    ${response_code}    200
+    Should Be Equal As Strings    ${user_updated_message}    User updated!
 
 GET /api/productsList
     Create Session    mysession    ${URL}
