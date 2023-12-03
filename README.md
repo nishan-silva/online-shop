@@ -49,5 +49,7 @@ Environment Setup
 **Git Commands**
 
     git add .
+
     git commit -m "readme file edited"
+    
     git push
