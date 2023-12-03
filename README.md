@@ -7,6 +7,7 @@ Environment Setup
 ==================
 
 **Install Python:**
+
     https://www.python.org/downloads/
 
 **Checking python version:**
