@@ -107,6 +107,6 @@ DELETE /api/deleteAccount
     Log To Console    ${response.content}
     Log To Console    ${response.headers}
 
-    # Validation
+    # Validations
     ${status_code}=    Convert To String    ${response.status_code}
     Should Be Equal    ${status_code}    200
