@@ -1,4 +1,5 @@
 # Ignore Robot Framework generated files
+.DS_Store
 log.html
 output.xml
 report.html
@@ -6,6 +7,3 @@ __pycache__
 # Ignore IDE-specific files
 *vscode*
 .idea
-
-git rm --cached *.log
-git rm --cached output/
