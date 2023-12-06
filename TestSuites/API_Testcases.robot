@@ -12,31 +12,31 @@ ${TIMEOUT}=     5
 
 *** Test Cases ***
 POST /api/createAccount
-    ${response}=    CommonKeywords.Calling API    POST    ${URL}/api/createAccount    200    data=${USER_REGISTRATION_SUCCESS}
-    Log To Console    ${response.status_code}
-    Log To Console    ${response.content}
+    ${parsed_response}=    CommonKeywords.Calling API    POST    ${URL}/api/createAccount    200    data=${USER_REGISTRATION_SUCCESS}
+    Log To Console    ${parsed_response.status_code}
+    Log To Console    ${parsed_response.content}
 
 PUT /api/updateAccount
-    ${response}=    CommonKeywords.Calling API    PUT    ${URL}/api/updateAccount    200    data=${UPDATE_USER_DETAILS}
-        Log To Console    ${response.status_code}
-        Log To Console    ${response.content}
+    ${parsed_response}=    CommonKeywords.Calling API    PUT    ${URL}/api/updateAccount    200    data=${UPDATE_USER_DETAILS}
+        Log To Console    ${parsed_response.status_code}
+        Log To Console    ${parsed_response.content}
 
 GET /api/productsList
-    ${response}=    CommonKeywords.Calling API    GET    ${URL}/api/productsList   200
-    Log To Console    ${response.status_code}
-    Log To Console    ${response.content}
+    ${parsed_response}=    CommonKeywords.Calling API    GET    ${URL}/api/productsList   200
+    Log To Console    ${parsed_response.status_code}
+    Log To Console    ${parsed_response.content}
 
  POST /api/Search Product
-    ${response}=    CommonKeywords.Calling API    POST    ${URL}/api/searchProduct   200        data=${SEARCH_PRODUCT}
-    Log To Console    ${response.status_code}
-    Log To Console    ${response.content}
+    ${parsed_response}=    CommonKeywords.Calling API    POST    ${URL}/api/searchProduct   200        data=${SEARCH_PRODUCT}
+    Log To Console    ${parsed_response.status_code}
+    Log To Console    ${parsed_response.content}
 
 GET /api/getUserDetailByEmail
-    ${response}=    CommonKeywords.Calling API    GET    ${URL}/api/getUserDetailByEmail   200        params=email=${EMAIL}
-    Log To Console    ${response.status_code}
-    Log To Console    ${response.content}
+    ${parsed_response}=    CommonKeywords.Calling API    GET    ${URL}/api/getUserDetailByEmail   200        params=email=${EMAIL}
+    Log To Console    ${parsed_response.status_code}
+    Log To Console    ${parsed_response.content}
     
 DELETE /api/deleteAccount
-    ${response}=    CommonKeywords.Calling API    DELETE    ${URL}/api/deleteAccount   200        data=${DELETE_USER}
-    Log To Console    ${response.status_code}
-    Log To Console    ${response.content}
+    ${parsed_response}=    CommonKeywords.Calling API    DELETE    ${URL}/api/deleteAccount   200        data=${DELETE_USER}
+    Log To Console    ${parsed_response.status_code}
+    Log To Console    ${parsed_response.content}

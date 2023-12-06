@@ -8,19 +8,3 @@ Calling API
     ${response}=    Run Keyword    RequestsLibrary.${method}    ${endpoint}    params=${params}    data=${data}    expected_status=${status_code}
     ${parsed_response}=    Set Variable    ${response}
     [Return]    ${parsed_response}
-
-Get User Details
-    [Arguments]    ${url}    ${email}
-    Create Session    mysession    ${url}
-    ${header}=    Create Dictionary    Content-Type=application/json
-    ${response}=    GET    ${url}/api/getUserDetailByEmail?email=${email}
-    Log To Console    ${response.status_code}
-    Log To Console    ${response.content}
-    Log To Console    ${response.headers}
-    [Return]    ${response}
-
-Extract User Data
-    [Arguments]    ${response}
-    ${json}=    Evaluate    json.loads($response.content)
-    ${userData}=    Set Suite Variable    ${json}    # or extract necessary user data
-    [Return]    ${userData}
