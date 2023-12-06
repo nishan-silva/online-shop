@@ -1,0 +1,10 @@
+log.html
+output.xml
+rerun.xml
+report.html
+*.bak
+*vscode*
+.idea
+ArgumentFiles/*.args
+Configuration/*.cfg
+*.pyc
