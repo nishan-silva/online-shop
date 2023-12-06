@@ -15,3 +15,7 @@ Validating Response Message
     ${response_dict}=    Evaluate    json.loads($actual_response)    json
     ${actual_message}=    Get From Dictionary    ${response_dict}    message
     Should Be Equal As Strings    ${actual_message}    ${expected_message}
+Response Logs
+    [Arguments]    ${status_code}    ${content}
+    Log To Console    ${status_code}
+    Log To Console    ${content.decode('utf-8')}
