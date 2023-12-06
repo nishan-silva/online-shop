@@ -1,13 +1,4 @@
 *** Settings ***
-<<<<<<< HEAD
-Documentation   Test Product API of the backend
-Library         RequestsLibrary
-Library         Collections
-Library         JSONLibrary
-Library         Random
-Resource        ../KeywordLibraries/CommonKeywords.robot  
-Variables       ../TestData/TestData.py
-=======
 Documentation       Test Product API of the backend
 
 Library             RequestsLibrary
@@ -15,7 +6,6 @@ Library             Collections
 Resource            ../KeywordLibraries/CommonKeywords.robot
 Variables           ../TestData/TestData.py
 
->>>>>>> dev
 
 *** Variables ***
 ${URL}=         ${ENV_BACKEND_PROTOCOL}://${ENV_BACKEND_HOST}
@@ -82,32 +72,6 @@ GET /api/productsList
     ${status_code}=    Convert To String    ${response.status_code}
     Should Be Equal    ${status_code}    200
 
-<<<<<<< HEAD
-#StoreCategoriesAndUseInNextRequest
-    @{categories}=    Create List
-
-    FOR    ${product}    IN    @{json_object["products"]}
-        ${category}=    Get From Dictionary    ${product}    category
-        ${category_name}=    Get From Dictionary    ${category}    category
-        Append To List    ${categories}    ${category_name}
-    END
-
-    Log To Console    ${categories}    # Displays all category names in the log
-
-    # Use ${categories} in subsequent requests or actions
-    # For example:
-    # ${first_category}=    Get From List    ${categories}    0
-    # Log    First Category: ${first_category}
-
- POST /api/Search Product   
-     Create Session    mysession    ${URL}
-     ${body}=    Create Dictionary     search_product=tops
-     ${header}=    Create Dictionary    Content-Type=application/json
-     ${response}=    POST    ${URL}/api/searchProduct    data=${body}
-     Log To Console    ${response.status_code}
-     Log To Console    ${response.content}
-     Log To Console    ${response.headers}
-=======
  POST /api/Search Product
     Create Session    mysession    ${URL}
     ${body}=    Create Dictionary    search_product=top
@@ -116,7 +80,6 @@ GET /api/productsList
     Log To Console    ${response.status_code}
     Log To Console    ${response.content}
     Log To Console    ${response.headers}
->>>>>>> dev
 
     # Validations
     ${status_code}=    Convert To String    ${response.status_code}
