@@ -43,7 +43,7 @@ Environment Setup
 
 **Run testcases**
 
-    robot -A "ArgumentFiles/aws.args" "TestSuites/api.robot"
+    robot -A "ArgumentFiles/aws.args" "TestSuites/API_Testcases.robot"
 
 
 **Git Commands**

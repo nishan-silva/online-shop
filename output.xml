@@ -1,539 +1,1447 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.6 on darwin)" generated="20231203 20:03:20.223" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.6 on darwin)" generated="20231204 00:01:08.446" rpa="false" schemaversion="4">
 <suite id="s1" name="API Testcases" source="/Users/nishansilva/Test_Automation/online-shop/TestSuites/API_Testcases.robot">
-<test id="s1-t1" name="POST /api/createAccount" line="13">
+<test id="s1-t1" name="POST /api/createAccount" line="15">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231203 20:03:20.347" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231203 20:03:20.347" endtime="20231203 20:03:20.347"/>
+<msg timestamp="20231204 00:01:08.759" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231204 00:01:08.758" endtime="20231204 00:01:08.759"/>
 </kw>
 <kw name="Get Variable Value" library="BuiltIn">
 <var>${user_registration_success}</var>
 <arg>${USER_REGISTRATION_SUCCESS}</arg>
 <doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<msg timestamp="20231203 20:03:20.347" level="INFO">${user_registration_success} = {'name': 'Nishan Silva', 'email': 'nishan@gmail.com', 'password': 'nishan@1', 'title': 'Mr', 'birth_date': '09', 'birth_month': '', 'birth_year': '1989', 'firstname': 'Nishan', 'lastname': 'Silva', 'c...</msg>
-<status status="PASS" starttime="20231203 20:03:20.347" endtime="20231203 20:03:20.347"/>
+<msg timestamp="20231204 00:01:08.759" level="INFO">${user_registration_success} = {'name': 'Nishan Silva', 'email': 'nishan@gmail.com', 'password': 'nishan@1', 'title': 'Mr', 'birth_date': '09', 'birth_month': '', 'birth_year': '1989', 'firstname': 'Nishan', 'lastname': 'Silva', 'c...</msg>
+<status status="PASS" starttime="20231204 00:01:08.759" endtime="20231204 00:01:08.759"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${body}</var>
 <arg>$user_registration_success</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231203 20:03:20.350" level="INFO">${body} = {'name': 'Nishan Silva', 'email': 'nishan@gmail.com', 'password': 'nishan@1', 'title': 'Mr', 'birth_date': '09', 'birth_month': '', 'birth_year': '1989', 'firstname': 'Nishan', 'lastname': 'Silva', 'c...</msg>
-<status status="PASS" starttime="20231203 20:03:20.348" endtime="20231203 20:03:20.350"/>
+<msg timestamp="20231204 00:01:08.760" level="INFO">${body} = {'name': 'Nishan Silva', 'email': 'nishan@gmail.com', 'password': 'nishan@1', 'title': 'Mr', 'birth_date': '09', 'birth_month': '', 'birth_year': '1989', 'firstname': 'Nishan', 'lastname': 'Silva', 'c...</msg>
+<status status="PASS" starttime="20231204 00:01:08.759" endtime="20231204 00:01:08.760"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231203 20:03:20.350" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20231203 20:03:20.350" endtime="20231203 20:03:20.350"/>
+<msg timestamp="20231204 00:01:08.760" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231204 00:01:08.760" endtime="20231204 00:01:08.760"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
 <arg>${URL}/api/createAccount</arg>
 <arg>data=${body}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20231203 20:03:21.246" level="INFO">POST Request : url=https://automationexercise.com/api/createAccount 
+<msg timestamp="20231204 00:01:09.608" level="INFO">POST Request : url=https://automationexercise.com/api/createAccount 
  path_url=/api/createAccount 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '291', 'Content-Type': 'application/x-www-form-urlencoded'} 
  body=name=Nishan+Silva&amp;email=nishan%40gmail.com&amp;password=nishan%401&amp;title=Mr&amp;birth_date=09&amp;birth_month=&amp;birth_year=1989&amp;firstname=Nishan&amp;lastname=Silva&amp;company=Nishan+%28PVT%29+Ltd&amp;address1=YO-Kyla+32+A+01&amp;address2=&amp;country=&amp;zipcode=20540&amp;state=Los+angeles&amp;city=California&amp;mobile_number=041123456 
  </msg>
-<msg timestamp="20231203 20:03:21.246" level="INFO">POST Response : url=https://automationexercise.com/api/createAccount 
+<msg timestamp="20231204 00:01:09.608" level="INFO">POST Response : url=https://automationexercise.com/api/createAccount 
  status=200, reason=OK 
- headers={'Date': 'Sun, 03 Dec 2023 18:03:21 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'POST, OPTIONS', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=tiSeat2FuY4EQ62WOZUYJHIQiscEsn4xHzrrxNUgU1ssLbykXhmrFOae1AHWQjhW7vfFy3ArNjzV4%2FGgvJjENqeEXImLhpQxQY4ckB%2FFT8qJqcZCtU1ZMfpqPzCuI39U5Myl9iC5hWkn"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fdb9cd3e3ed947-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ headers={'Date': 'Sun, 03 Dec 2023 22:01:09 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'OPTIONS, POST', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=Ik3mIXhrMceoVnzCX5wJzmf5VKpXZVsSsjDW4iGDdQnWRCPB87eXwV0flWOI9nIchPk38cLEKqAiVhm4giRXMYRYLbCj10S0J08GoZT40356WgYVpwTn517%2FzHEVQgqdHo4%2FNyz48FLL"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82ff16267b29d943-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
  body={"responseCode": 201, "message": "User created!"} 
  </msg>
-<msg timestamp="20231203 20:03:21.246" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20231203 20:03:20.350" endtime="20231203 20:03:21.246"/>
+<msg timestamp="20231204 00:01:09.608" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231204 00:01:08.760" endtime="20231204 00:01:09.608"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:21.246" endtime="20231203 20:03:21.247"/>
+<status status="PASS" starttime="20231204 00:01:09.609" endtime="20231204 00:01:09.610"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:21.247" endtime="20231203 20:03:21.247"/>
+<status status="PASS" starttime="20231204 00:01:09.611" endtime="20231204 00:01:09.612"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.headers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:21.248" endtime="20231203 20:03:21.248"/>
+<status status="PASS" starttime="20231204 00:01:09.612" endtime="20231204 00:01:09.613"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${json_object}</var>
 <arg>json.loads($response.content)</arg>
 <arg>json</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231203 20:03:21.248" level="INFO">${json_object} = {'responseCode': 201, 'message': 'User created!'}</msg>
-<status status="PASS" starttime="20231203 20:03:21.248" endtime="20231203 20:03:21.248"/>
+<msg timestamp="20231204 00:01:09.614" level="INFO">${json_object} = {'responseCode': 201, 'message': 'User created!'}</msg>
+<status status="PASS" starttime="20231204 00:01:09.613" endtime="20231204 00:01:09.614"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20231203 20:03:21.249" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20231203 20:03:21.249" endtime="20231203 20:03:21.249"/>
+<msg timestamp="20231204 00:01:09.616" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20231204 00:01:09.614" endtime="20231204 00:01:09.616"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20231203 20:03:21.249" endtime="20231203 20:03:21.249"/>
+<status status="PASS" starttime="20231204 00:01:09.616" endtime="20231204 00:01:09.616"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${response_code}</var>
 <arg>${json_object}</arg>
 <arg>responseCode</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20231203 20:03:21.250" level="INFO">${response_code} = 201</msg>
-<status status="PASS" starttime="20231203 20:03:21.250" endtime="20231203 20:03:21.250"/>
+<msg timestamp="20231204 00:01:09.617" level="INFO">${response_code} = 201</msg>
+<status status="PASS" starttime="20231204 00:01:09.616" endtime="20231204 00:01:09.617"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${create_account_message}</var>
 <arg>${json_object}</arg>
 <arg>message</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20231203 20:03:21.250" level="INFO">${create_account_message} = User created!</msg>
-<status status="PASS" starttime="20231203 20:03:21.250" endtime="20231203 20:03:21.250"/>
+<msg timestamp="20231204 00:01:09.617" level="INFO">${create_account_message} = User created!</msg>
+<status status="PASS" starttime="20231204 00:01:09.617" endtime="20231204 00:01:09.617"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:21.250" endtime="20231203 20:03:21.250"/>
+<status status="PASS" starttime="20231204 00:01:09.617" endtime="20231204 00:01:09.618"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${create_account_message}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:21.250" endtime="20231203 20:03:21.250"/>
+<status status="PASS" starttime="20231204 00:01:09.618" endtime="20231204 00:01:09.618"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${response_code}</arg>
 <arg>201</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20231203 20:03:21.251" level="INFO">Argument types are:
+<msg timestamp="20231204 00:01:09.618" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20231203 20:03:21.251" endtime="20231203 20:03:21.251"/>
+<status status="PASS" starttime="20231204 00:01:09.618" endtime="20231204 00:01:09.618"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${create_account_message}</arg>
 <arg>User created!</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20231203 20:03:21.251" endtime="20231203 20:03:21.251"/>
+<status status="PASS" starttime="20231204 00:01:09.619" endtime="20231204 00:01:09.619"/>
 </kw>
-<status status="PASS" starttime="20231203 20:03:20.346" endtime="20231203 20:03:21.251"/>
+<status status="PASS" starttime="20231204 00:01:08.758" endtime="20231204 00:01:09.619"/>
 </test>
-<test id="s1-t2" name="PUT /api/updateAccount" line="36">
+<test id="s1-t2" name="PUT /api/updateAccount" line="38">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231203 20:03:21.252" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231203 20:03:21.252" endtime="20231203 20:03:21.252"/>
+<msg timestamp="20231204 00:01:09.620" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231204 00:01:09.620" endtime="20231204 00:01:09.621"/>
 </kw>
 <kw name="Get Variable Value" library="BuiltIn">
 <var>${update_user_details}</var>
 <arg>${UPDATE_USER_DETAILS}</arg>
 <doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<msg timestamp="20231203 20:03:21.253" level="INFO">${update_user_details} = {'name': 'NishanS', 'email': 'nishan@gmail.com', 'password': 'nishan@1', 'title': 'Mr', 'birth_date': '10', 'birth_month': '', 'birth_year': '1990', 'firstname': 'Nishaan', 'lastname': 'Silvaa', 'comp...</msg>
-<status status="PASS" starttime="20231203 20:03:21.253" endtime="20231203 20:03:21.253"/>
+<msg timestamp="20231204 00:01:09.621" level="INFO">${update_user_details} = {'name': 'NishanS', 'email': 'nishan@gmail.com', 'password': 'nishan@1', 'title': 'Mr', 'birth_date': '10', 'birth_month': '', 'birth_year': '1990', 'firstname': 'Nishaan', 'lastname': 'Silvaa', 'comp...</msg>
+<status status="PASS" starttime="20231204 00:01:09.621" endtime="20231204 00:01:09.621"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${body}</var>
 <arg>$update_user_details</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231203 20:03:21.253" level="INFO">${body} = {'name': 'NishanS', 'email': 'nishan@gmail.com', 'password': 'nishan@1', 'title': 'Mr', 'birth_date': '10', 'birth_month': '', 'birth_year': '1990', 'firstname': 'Nishaan', 'lastname': 'Silvaa', 'comp...</msg>
-<status status="PASS" starttime="20231203 20:03:21.253" endtime="20231203 20:03:21.253"/>
+<msg timestamp="20231204 00:01:09.622" level="INFO">${body} = {'name': 'NishanS', 'email': 'nishan@gmail.com', 'password': 'nishan@1', 'title': 'Mr', 'birth_date': '10', 'birth_month': '', 'birth_year': '1990', 'firstname': 'Nishaan', 'lastname': 'Silvaa', 'comp...</msg>
+<status status="PASS" starttime="20231204 00:01:09.621" endtime="20231204 00:01:09.622"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231203 20:03:21.254" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20231203 20:03:21.253" endtime="20231203 20:03:21.254"/>
+<msg timestamp="20231204 00:01:09.622" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231204 00:01:09.622" endtime="20231204 00:01:09.622"/>
 </kw>
 <kw name="PUT" library="RequestsLibrary">
 <var>${response}</var>
 <arg>${URL}/api/updateAccount</arg>
 <arg>data=${body}</arg>
 <doc>Sends a PUT request.</doc>
-<msg timestamp="20231203 20:03:22.262" level="INFO">PUT Request : url=https://automationexercise.com/api/updateAccount 
+<msg timestamp="20231204 00:01:10.624" level="INFO">PUT Request : url=https://automationexercise.com/api/updateAccount 
  path_url=/api/updateAccount 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '273', 'Content-Type': 'application/x-www-form-urlencoded'} 
  body=name=NishanS&amp;email=nishan%40gmail.com&amp;password=nishan%401&amp;title=Mr&amp;birth_date=10&amp;birth_month=&amp;birth_year=1990&amp;firstname=Nishaan&amp;lastname=Silvaa&amp;company=NishanS+%28PVT%29+Ltd&amp;address1=YO-Kyla&amp;address2=&amp;country=&amp;zipcode=53430&amp;state=Turku&amp;city=Finland&amp;mobile_number=0514723240 
  </msg>
-<msg timestamp="20231203 20:03:22.262" level="INFO">PUT Response : url=https://automationexercise.com/api/updateAccount 
+<msg timestamp="20231204 00:01:10.625" level="INFO">PUT Response : url=https://automationexercise.com/api/updateAccount 
  status=200, reason=OK 
- headers={'Date': 'Sun, 03 Dec 2023 18:03:22 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'PUT, OPTIONS', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=fl1pWo6huUeXHWZaYbxMddL686cI9h%2BduPkMttuz5Qo8TStj62nEHxyUjv%2FnEeBr37gv7QRZUZnP29%2FuCY2dktHg5mCxTof%2FK1KTixExy1uHGFuHFGqSoMvKTikfM3CHQ0XS3dX%2BZDFu"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fdb9d2af8456a8-OSL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ headers={'Date': 'Sun, 03 Dec 2023 22:01:10 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'OPTIONS, PUT', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=Whz%2Ba2gq%2FbyLVEnnLU6L3F5OV4qArhiYt5gV7BNQWh9hGDxu0mSe7Ur3V5G1RK3E0fCa4hVh0ffxkz0NsJ%2BSuJR%2FbVJuW3k3xPhW1Mmu%2BhuNBpYFXciQE0SutRx99nN4zJNFUgQ5c6mL"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82ff162bcede4c80-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
  body={"responseCode": 200, "message": "User updated!"} 
  </msg>
-<msg timestamp="20231203 20:03:22.262" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20231203 20:03:21.254" endtime="20231203 20:03:22.262"/>
+<msg timestamp="20231204 00:01:10.625" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231204 00:01:09.622" endtime="20231204 00:01:10.625"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:22.262" endtime="20231203 20:03:22.263"/>
+<status status="PASS" starttime="20231204 00:01:10.625" endtime="20231204 00:01:10.626"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:22.263" endtime="20231203 20:03:22.263"/>
+<status status="PASS" starttime="20231204 00:01:10.626" endtime="20231204 00:01:10.627"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.headers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:22.263" endtime="20231203 20:03:22.264"/>
+<status status="PASS" starttime="20231204 00:01:10.627" endtime="20231204 00:01:10.628"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${json_object}</var>
 <arg>json.loads($response.content)</arg>
 <arg>json</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231203 20:03:22.264" level="INFO">${json_object} = {'responseCode': 200, 'message': 'User updated!'}</msg>
-<status status="PASS" starttime="20231203 20:03:22.264" endtime="20231203 20:03:22.264"/>
+<msg timestamp="20231204 00:01:10.629" level="INFO">${json_object} = {'responseCode': 200, 'message': 'User updated!'}</msg>
+<status status="PASS" starttime="20231204 00:01:10.628" endtime="20231204 00:01:10.629"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20231203 20:03:22.265" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20231203 20:03:22.264" endtime="20231203 20:03:22.265"/>
+<msg timestamp="20231204 00:01:10.631" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20231204 00:01:10.629" endtime="20231204 00:01:10.631"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20231203 20:03:22.265" endtime="20231203 20:03:22.265"/>
+<status status="PASS" starttime="20231204 00:01:10.631" endtime="20231204 00:01:10.631"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${response_code}</var>
 <arg>${json_object}</arg>
 <arg>responseCode</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20231203 20:03:22.265" level="INFO">${response_code} = 200</msg>
-<status status="PASS" starttime="20231203 20:03:22.265" endtime="20231203 20:03:22.265"/>
+<msg timestamp="20231204 00:01:10.631" level="INFO">${response_code} = 200</msg>
+<status status="PASS" starttime="20231204 00:01:10.631" endtime="20231204 00:01:10.631"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${user_updated_message}</var>
 <arg>${json_object}</arg>
 <arg>message</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20231203 20:03:22.266" level="INFO">${user_updated_message} = User updated!</msg>
-<status status="PASS" starttime="20231203 20:03:22.266" endtime="20231203 20:03:22.266"/>
+<msg timestamp="20231204 00:01:10.632" level="INFO">${user_updated_message} = User updated!</msg>
+<status status="PASS" starttime="20231204 00:01:10.632" endtime="20231204 00:01:10.632"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:22.266" endtime="20231203 20:03:22.266"/>
+<status status="PASS" starttime="20231204 00:01:10.632" endtime="20231204 00:01:10.632"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${user_updated_message}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:22.266" endtime="20231203 20:03:22.266"/>
+<status status="PASS" starttime="20231204 00:01:10.632" endtime="20231204 00:01:10.632"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${response_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20231203 20:03:22.266" level="INFO">Argument types are:
+<msg timestamp="20231204 00:01:10.633" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20231203 20:03:22.266" endtime="20231203 20:03:22.266"/>
+<status status="PASS" starttime="20231204 00:01:10.633" endtime="20231204 00:01:10.633"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${user_updated_message}</arg>
 <arg>User updated!</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20231203 20:03:22.267" endtime="20231203 20:03:22.267"/>
+<status status="PASS" starttime="20231204 00:01:10.633" endtime="20231204 00:01:10.633"/>
 </kw>
-<status status="PASS" starttime="20231203 20:03:21.252" endtime="20231203 20:03:22.267"/>
+<status status="PASS" starttime="20231204 00:01:09.620" endtime="20231204 00:01:10.633"/>
 </test>
-<test id="s1-t3" name="GET /api/productsList" line="59">
+<test id="s1-t3" name="GET /api/productsList" line="61">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231203 20:03:22.268" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231203 20:03:22.268" endtime="20231203 20:03:22.268"/>
+<msg timestamp="20231204 00:01:10.634" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231204 00:01:10.634" endtime="20231204 00:01:10.634"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231203 20:03:22.268" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20231203 20:03:22.268" endtime="20231203 20:03:22.268"/>
+<msg timestamp="20231204 00:01:10.635" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231204 00:01:10.634" endtime="20231204 00:01:10.635"/>
 </kw>
 <kw name="GET" library="RequestsLibrary">
 <var>${response}</var>
 <arg>${URL}/api/productsList</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20231203 20:03:23.083" level="INFO">GET Request : url=https://automationexercise.com/api/productsList 
+<msg timestamp="20231204 00:01:11.447" level="INFO">GET Request : url=https://automationexercise.com/api/productsList 
  path_url=/api/productsList 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20231203 20:03:23.083" level="INFO">GET Response : url=https://automationexercise.com/api/productsList 
+<msg timestamp="20231204 00:01:11.447" level="INFO">GET Response : url=https://automationexercise.com/api/productsList 
  status=200, reason=OK 
- headers={'Date': 'Sun, 03 Dec 2023 18:03:23 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'PUT, DELETE, OPTIONS, POST, GET', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=X8F7vUcaoBQxT5QsQin2WyUkUwzfYvi69FlYSSdmtBecK9WoVqBkn7IqI2PUrkLcUHzFMY%2FEmTntwHjcdiUEwK25aeARc4ET7eBOWxa2e1XRDA8zazts%2Be4sWhIVuE4JsI7RAWFaATd7"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fdb9d8d900d98d-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ headers={'Date': 'Sun, 03 Dec 2023 22:01:11 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'GET, POST, DELETE, PUT, OPTIONS', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=GkrtRP7CeBE6lqTwgm%2BrnKItI4uA2tfaJa7kfqKJ%2FG71EbKF00C43yZu51sCK9hK6g049pOjFrbd20JzbEAOcWuc1kNnzFWVl2PWwQlGSoG4w8rY9LY8qODasvZhOlZ2eBPdt5SVjfbT"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82ff163208af4c8c-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
  body={"responseCode": 200, "products": [{"id": 1, "name": "Blue Top", "price": "Rs. 500", "brand": "Polo", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 2, "name": "Men Tshirt", "price": "Rs. 400", "brand": "H&amp;M", "category": {"usertype": {"usertype": "Men"}, "category": "Tshirts"}}, {"id": 3, "name": "Sleeveless Dress", "price": "Rs. 1000", "brand": "Madame", "category": {"usertype": {"usertype": "Women"}, "category": "Dress"}}, {"id": 4, "name": "Stylish Dress", "price": "Rs. 1500", "brand": "Madame", "category": {"usertype": {"usertype": "Women"}, "category": "Dress"}}, {"id": 5, "name": "Winter Top", "price": "Rs. 600", "brand": "Mast &amp; Harbour", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 6, "name": "Summer White Top", "price": "Rs. 400", "brand": "H&amp;M", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 7, "name": "Madame Top For Women", "price": "Rs. 1000", "brand": "Madame", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 8, "name": "Fancy Green Top", "price": "Rs. 700", "brand": "Polo", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 11, "name": "Sleeves Printed Top - White", "price": "Rs. 499", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 12, "name": "Half Sleeves Top Schiffli Detailing - Pink", "price": "Rs. 359", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 13, "name": "Frozen Tops For Kids", "price": "Rs. 278", "brand": "Allen Solly Junior", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 14, "name": "Full Sleeves Top Cherry - Pink", "price": "Rs. 679", "brand": "Kookie Kids", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 15, "name": "Printed Off Shoulder Top - White", "price": "Rs. 315", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 16, "name": "Sleeves Top and Short - Blue &amp; Pink", "price": "Rs. 478", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Dress"}}, {"id": 18, "name": "Little Girls Mr. Panda Shirt", "price": "Rs. 1200", "brand": "Kookie Kids", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 19, "name": "Sleeveless Unicorn Patch Gown - Pink", "price": "Rs. 1050", "brand": "Allen Solly Junior", "category": {"usertype": {"usertype": "Kids"}, "category": "Dress"}}, {"id": 20, "name": "Cotton Mull Embroidered Dress", "price": "Rs. 1190", "brand": "Kookie Kids", "category": {"usertype": {"usertype": "Kids"}, "category": "Dress"}}, {"id": 21, "name": "Blue Cotton Indie Mickey Dress", "price": "Rs. 1530", "brand": "Biba", "category": {"usertype": {"usertype": "Kids"}, "category": "Dress"}}, {"id": 22, "name": "Long Maxi Tulle Fancy Dress Up Outfits -Pink", "price": "Rs. 1600", "brand": "Biba", "category": {"usertype": {"usertype": "Kids"}, "category": "Dress"}}, {"id": 23, "name": "Sleeveless Unicorn Print Fit &amp; Flare Net Dress - Multi", "price": "Rs. 1100", "brand": "Biba", "category": {"usertype": {"usertype": "Kids"}, "category": "Dress"}}, {"id": 24, "name": "Colour Blocked Shirt \u2013 Sky Blue", "price": "Rs. 849", "brand": "Allen Solly Junior", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 28, "name": "Pure Cotton V-Neck T-Shirt", "price": "Rs. 1299", "brand": "H&amp;M", "category": {"usertype": {"usertype": "Men"}, "category": "Tshirts"}}, {"id": 29, "name": "Green Side Placket Detail T-Shirt", "price": "Rs. 1000", "brand": "Polo", "category": {"usertype": {"usertype": "Men"}, "category": "Tshirts"}}, {"id": 30, "name": "Premium Polo T-Shirts", "price": "Rs. 1500", "brand": "Polo", "category": {"usertype": {"usertype": "Men"}, "category": "Tshirts"}}, {"id": 31, "name": "Pure Cotton Neon Green Tshirt", "price": "Rs. 850", "brand": "H&amp;M", "category": {"usertype": {"usertype": "Men"}, "category": "Tshirts"}}, {"id": 33, "name": "Soft Stretch Jeans", "price": "Rs. 799", "brand": "Polo", "category": {"usertype": {"usertype": "Men"}, "category": "Jeans"}}, {"id": 35, "name": "Regular Fit Straight Jeans", "price": "Rs. 1200", "brand": "H&amp;M", "category": {"usertype": {"usertype": "Men"}, "category": "Jeans"}}, {"id": 37, "name": "Grunt Blue Slim Fit Jeans", "price": "Rs. 1400", "brand": "Polo", "category": {"usertype": {"usertype": "Men"}, "category": "Jeans"}}, {"id": 38, "name": "Rose Pink Embroidered Maxi Dress", "price": "Rs. 2300", "brand": "Madame", "category": {"usertype": {"usertype": "Women"}, "category": "Dress"}}, {"id": 39, "name": "Cotton Silk Hand Block Print Saree", "price": "Rs. 3000", "brand": "Biba", "category": {"usertype": {"usertype": "Women"}, "category": "Saree"}}, {"id": 40, "name": "Rust Red Linen Saree", "price": "Rs. 3500", "brand": "Biba", "category": {"usertype": {"usertype": "Women"}, "category": "Saree"}}, {"id": 41, "name": "Beautiful Peacock Blue Cotton Linen Saree", "price": "Rs. 5000", "brand": "Madame", "category": {"usertype": {"usertype": "Women"}, "category": "Saree"}}, {"id": 42, "name": "Lace Top For Women", "price": "Rs. 1400", "brand": "Mast &amp; Harbour", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 43, "name": "GRAPHIC DESIGN MEN T SHIRT - BLUE", "price": "Rs. 1389", "brand": "Mast &amp; Harbour", "category": {"usertype": {"usertype": "Men"}, "category": "Tshirts"}}]} 
  </msg>
-<msg timestamp="20231203 20:03:23.084" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20231203 20:03:22.269" endtime="20231203 20:03:23.084"/>
+<msg timestamp="20231204 00:01:11.448" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231204 00:01:10.635" endtime="20231204 00:01:11.448"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:23.084" endtime="20231203 20:03:23.084"/>
+<status status="PASS" starttime="20231204 00:01:11.448" endtime="20231204 00:01:11.450"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:23.085" endtime="20231203 20:03:23.085"/>
+<status status="PASS" starttime="20231204 00:01:11.450" endtime="20231204 00:01:11.452"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.headers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:23.086" endtime="20231203 20:03:23.086"/>
+<status status="PASS" starttime="20231204 00:01:11.452" endtime="20231204 00:01:11.453"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${json_object}</var>
+<arg>json.loads($response.content)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231204 00:01:11.454" level="INFO">${json_object} = {'responseCode': 200, 'products': [{'id': 1, 'name': 'Blue Top', 'price': 'Rs. 500', 'brand': 'Polo', 'category': {'usertype': {'usertype': 'Women'}, 'category': 'Tops'}}, {'id': 2, 'name': 'Men Tshir...</msg>
+<status status="PASS" starttime="20231204 00:01:11.453" endtime="20231204 00:01:11.454"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20231203 20:03:23.087" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20231203 20:03:23.086" endtime="20231203 20:03:23.087"/>
+<msg timestamp="20231204 00:01:11.456" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20231204 00:01:11.455" endtime="20231204 00:01:11.456"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20231203 20:03:23.087" endtime="20231203 20:03:23.087"/>
+<status status="PASS" starttime="20231204 00:01:11.456" endtime="20231204 00:01:11.456"/>
 </kw>
-<status status="PASS" starttime="20231203 20:03:22.267" endtime="20231203 20:03:23.087"/>
+<kw name="Create List" library="BuiltIn">
+<var>@{categories}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231204 00:01:11.457" level="INFO">@{categories} = [ ]</msg>
+<status status="PASS" starttime="20231204 00:01:11.456" endtime="20231204 00:01:11.457"/>
+</kw>
+<for flavor="IN">
+<var>${product}</var>
+<value>@{json_object["products"]}</value>
+<iter>
+<var name="${product}">{'id': 1, 'name': 'Blue Top', 'price': 'Rs. 500', 'brand': 'Polo', 'category': {'usertype': {'usertype': 'Women'}, 'category': 'Tops'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.458" level="INFO">${category} = {'usertype': {'usertype': 'Women'}, 'category': 'Tops'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.458" endtime="20231204 00:01:11.458"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.459" level="INFO">${category_name} = Tops</msg>
+<status status="PASS" starttime="20231204 00:01:11.459" endtime="20231204 00:01:11.459"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.459" endtime="20231204 00:01:11.459"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.458" endtime="20231204 00:01:11.459"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 2, 'name': 'Men Tshirt', 'price': 'Rs. 400', 'brand': 'H&amp;M', 'category': {'usertype': {'usertype': 'Men'}, 'category': 'Tshirts'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.460" level="INFO">${category} = {'usertype': {'usertype': 'Men'}, 'category': 'Tshirts'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.460" endtime="20231204 00:01:11.460"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.460" level="INFO">${category_name} = Tshirts</msg>
+<status status="PASS" starttime="20231204 00:01:11.460" endtime="20231204 00:01:11.460"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.461" endtime="20231204 00:01:11.461"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.459" endtime="20231204 00:01:11.461"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 3, 'name': 'Sleeveless Dress', 'price': 'Rs. 1000', 'brand': 'Madame', 'category': {'usertype': {'usertype': 'Women'}, 'category': 'Dress'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.461" level="INFO">${category} = {'usertype': {'usertype': 'Women'}, 'category': 'Dress'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.461" endtime="20231204 00:01:11.461"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.462" level="INFO">${category_name} = Dress</msg>
+<status status="PASS" starttime="20231204 00:01:11.461" endtime="20231204 00:01:11.462"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.462" endtime="20231204 00:01:11.462"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.461" endtime="20231204 00:01:11.462"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 4, 'name': 'Stylish Dress', 'price': 'Rs. 1500', 'brand': 'Madame', 'category': {'usertype': {'usertype': 'Women'}, 'category': 'Dress'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.463" level="INFO">${category} = {'usertype': {'usertype': 'Women'}, 'category': 'Dress'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.462" endtime="20231204 00:01:11.463"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.463" level="INFO">${category_name} = Dress</msg>
+<status status="PASS" starttime="20231204 00:01:11.463" endtime="20231204 00:01:11.463"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.463" endtime="20231204 00:01:11.463"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.462" endtime="20231204 00:01:11.463"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 5, 'name': 'Winter Top', 'price': 'Rs. 600', 'brand': 'Mast &amp; Harbour', 'category': {'usertype': {'usertype': 'Women'}, 'category': 'Tops'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.464" level="INFO">${category} = {'usertype': {'usertype': 'Women'}, 'category': 'Tops'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.464" endtime="20231204 00:01:11.464"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.465" level="INFO">${category_name} = Tops</msg>
+<status status="PASS" starttime="20231204 00:01:11.464" endtime="20231204 00:01:11.465"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.465" endtime="20231204 00:01:11.465"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.464" endtime="20231204 00:01:11.465"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 6, 'name': 'Summer White Top', 'price': 'Rs. 400', 'brand': 'H&amp;M', 'category': {'usertype': {'usertype': 'Women'}, 'category': 'Tops'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.466" level="INFO">${category} = {'usertype': {'usertype': 'Women'}, 'category': 'Tops'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.466" endtime="20231204 00:01:11.466"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.466" level="INFO">${category_name} = Tops</msg>
+<status status="PASS" starttime="20231204 00:01:11.466" endtime="20231204 00:01:11.466"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.466" endtime="20231204 00:01:11.466"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.466" endtime="20231204 00:01:11.467"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 7, 'name': 'Madame Top For Women', 'price': 'Rs. 1000', 'brand': 'Madame', 'category': {'usertype': {'usertype': 'Women'}, 'category': 'Tops'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.467" level="INFO">${category} = {'usertype': {'usertype': 'Women'}, 'category': 'Tops'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.467" endtime="20231204 00:01:11.467"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.467" level="INFO">${category_name} = Tops</msg>
+<status status="PASS" starttime="20231204 00:01:11.467" endtime="20231204 00:01:11.467"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.467" endtime="20231204 00:01:11.467"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.467" endtime="20231204 00:01:11.468"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 8, 'name': 'Fancy Green Top', 'price': 'Rs. 700', 'brand': 'Polo', 'category': {'usertype': {'usertype': 'Women'}, 'category': 'Tops'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.468" level="INFO">${category} = {'usertype': {'usertype': 'Women'}, 'category': 'Tops'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.468" endtime="20231204 00:01:11.468"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.468" level="INFO">${category_name} = Tops</msg>
+<status status="PASS" starttime="20231204 00:01:11.468" endtime="20231204 00:01:11.468"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.468" endtime="20231204 00:01:11.468"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.468" endtime="20231204 00:01:11.468"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 11, 'name': 'Sleeves Printed Top - White', 'price': 'Rs. 499', 'brand': 'Babyhug', 'category': {'usertype': {'usertype': 'Kids'}, 'category': 'Tops &amp; Shirts'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.469" level="INFO">${category} = {'usertype': {'usertype': 'Kids'}, 'category': 'Tops &amp; Shirts'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.469" endtime="20231204 00:01:11.469"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.469" level="INFO">${category_name} = Tops &amp; Shirts</msg>
+<status status="PASS" starttime="20231204 00:01:11.469" endtime="20231204 00:01:11.469"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.469" endtime="20231204 00:01:11.469"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.469" endtime="20231204 00:01:11.469"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 12, 'name': 'Half Sleeves Top Schiffli Detailing - Pink', 'price': 'Rs. 359', 'brand': 'Babyhug', 'category': {'usertype': {'usertype': 'Kids'}, 'category': 'Tops &amp; Shirts'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.470" level="INFO">${category} = {'usertype': {'usertype': 'Kids'}, 'category': 'Tops &amp; Shirts'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.470" endtime="20231204 00:01:11.470"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.470" level="INFO">${category_name} = Tops &amp; Shirts</msg>
+<status status="PASS" starttime="20231204 00:01:11.470" endtime="20231204 00:01:11.470"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.470" endtime="20231204 00:01:11.470"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.470" endtime="20231204 00:01:11.470"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 13, 'name': 'Frozen Tops For Kids', 'price': 'Rs. 278', 'brand': 'Allen Solly Junior', 'category': {'usertype': {'usertype': 'Kids'}, 'category': 'Tops &amp; Shirts'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.471" level="INFO">${category} = {'usertype': {'usertype': 'Kids'}, 'category': 'Tops &amp; Shirts'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.471" endtime="20231204 00:01:11.471"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.471" level="INFO">${category_name} = Tops &amp; Shirts</msg>
+<status status="PASS" starttime="20231204 00:01:11.471" endtime="20231204 00:01:11.471"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.471" endtime="20231204 00:01:11.471"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.471" endtime="20231204 00:01:11.472"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 14, 'name': 'Full Sleeves Top Cherry - Pink', 'price': 'Rs. 679', 'brand': 'Kookie Kids', 'category': {'usertype': {'usertype': 'Kids'}, 'category': 'Tops &amp; Shirts'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.472" level="INFO">${category} = {'usertype': {'usertype': 'Kids'}, 'category': 'Tops &amp; Shirts'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.472" endtime="20231204 00:01:11.472"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.472" level="INFO">${category_name} = Tops &amp; Shirts</msg>
+<status status="PASS" starttime="20231204 00:01:11.472" endtime="20231204 00:01:11.472"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.472" endtime="20231204 00:01:11.473"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.472" endtime="20231204 00:01:11.473"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 15, 'name': 'Printed Off Shoulder Top - White', 'price': 'Rs. 315', 'brand': 'Babyhug', 'category': {'usertype': {'usertype': 'Kids'}, 'category': 'Tops &amp; Shirts'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.473" level="INFO">${category} = {'usertype': {'usertype': 'Kids'}, 'category': 'Tops &amp; Shirts'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.473" endtime="20231204 00:01:11.473"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.473" level="INFO">${category_name} = Tops &amp; Shirts</msg>
+<status status="PASS" starttime="20231204 00:01:11.473" endtime="20231204 00:01:11.473"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.473" endtime="20231204 00:01:11.473"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.473" endtime="20231204 00:01:11.473"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 16, 'name': 'Sleeves Top and Short - Blue &amp; Pink', 'price': 'Rs. 478', 'brand': 'Babyhug', 'category': {'usertype': {'usertype': 'Kids'}, 'category': 'Dress'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.474" level="INFO">${category} = {'usertype': {'usertype': 'Kids'}, 'category': 'Dress'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.474" endtime="20231204 00:01:11.474"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.480" level="INFO">${category_name} = Dress</msg>
+<status status="PASS" starttime="20231204 00:01:11.474" endtime="20231204 00:01:11.480"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.480" endtime="20231204 00:01:11.480"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.474" endtime="20231204 00:01:11.480"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 18, 'name': 'Little Girls Mr. Panda Shirt', 'price': 'Rs. 1200', 'brand': 'Kookie Kids', 'category': {'usertype': {'usertype': 'Kids'}, 'category': 'Tops &amp; Shirts'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.481" level="INFO">${category} = {'usertype': {'usertype': 'Kids'}, 'category': 'Tops &amp; Shirts'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.481" endtime="20231204 00:01:11.481"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.481" level="INFO">${category_name} = Tops &amp; Shirts</msg>
+<status status="PASS" starttime="20231204 00:01:11.481" endtime="20231204 00:01:11.481"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.481" endtime="20231204 00:01:11.481"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.481" endtime="20231204 00:01:11.481"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 19, 'name': 'Sleeveless Unicorn Patch Gown - Pink', 'price': 'Rs. 1050', 'brand': 'Allen Solly Junior', 'category': {'usertype': {'usertype': 'Kids'}, 'category': 'Dress'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.482" level="INFO">${category} = {'usertype': {'usertype': 'Kids'}, 'category': 'Dress'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.482" endtime="20231204 00:01:11.482"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.482" level="INFO">${category_name} = Dress</msg>
+<status status="PASS" starttime="20231204 00:01:11.482" endtime="20231204 00:01:11.482"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.482" endtime="20231204 00:01:11.482"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.482" endtime="20231204 00:01:11.482"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 20, 'name': 'Cotton Mull Embroidered Dress', 'price': 'Rs. 1190', 'brand': 'Kookie Kids', 'category': {'usertype': {'usertype': 'Kids'}, 'category': 'Dress'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.482" level="INFO">${category} = {'usertype': {'usertype': 'Kids'}, 'category': 'Dress'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.482" endtime="20231204 00:01:11.483"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.483" level="INFO">${category_name} = Dress</msg>
+<status status="PASS" starttime="20231204 00:01:11.483" endtime="20231204 00:01:11.483"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.483" endtime="20231204 00:01:11.483"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.482" endtime="20231204 00:01:11.483"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 21, 'name': 'Blue Cotton Indie Mickey Dress', 'price': 'Rs. 1530', 'brand': 'Biba', 'category': {'usertype': {'usertype': 'Kids'}, 'category': 'Dress'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.483" level="INFO">${category} = {'usertype': {'usertype': 'Kids'}, 'category': 'Dress'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.483" endtime="20231204 00:01:11.483"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.484" level="INFO">${category_name} = Dress</msg>
+<status status="PASS" starttime="20231204 00:01:11.483" endtime="20231204 00:01:11.484"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.484" endtime="20231204 00:01:11.484"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.483" endtime="20231204 00:01:11.484"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 22, 'name': 'Long Maxi Tulle Fancy Dress Up Outfits -Pink', 'price': 'Rs. 1600', 'brand': 'Biba', 'category': {'usertype': {'usertype': 'Kids'}, 'category': 'Dress'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.484" level="INFO">${category} = {'usertype': {'usertype': 'Kids'}, 'category': 'Dress'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.484" endtime="20231204 00:01:11.484"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.484" level="INFO">${category_name} = Dress</msg>
+<status status="PASS" starttime="20231204 00:01:11.484" endtime="20231204 00:01:11.484"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.484" endtime="20231204 00:01:11.484"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.484" endtime="20231204 00:01:11.484"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 23, 'name': 'Sleeveless Unicorn Print Fit &amp; Flare Net Dress - Multi', 'price': 'Rs. 1100', 'brand': 'Biba', 'category': {'usertype': {'usertype': 'Kids'}, 'category': 'Dress'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.485" level="INFO">${category} = {'usertype': {'usertype': 'Kids'}, 'category': 'Dress'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.485" endtime="20231204 00:01:11.485"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.485" level="INFO">${category_name} = Dress</msg>
+<status status="PASS" starttime="20231204 00:01:11.485" endtime="20231204 00:01:11.485"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.485" endtime="20231204 00:01:11.485"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.484" endtime="20231204 00:01:11.485"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 24, 'name': 'Colour Blocked Shirt – Sky Blue', 'price': 'Rs. 849', 'brand': 'Allen Solly Junior', 'category': {'usertype': {'usertype': 'Kids'}, 'category': 'Tops &amp; Shirts'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.485" level="INFO">${category} = {'usertype': {'usertype': 'Kids'}, 'category': 'Tops &amp; Shirts'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.485" endtime="20231204 00:01:11.485"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.486" level="INFO">${category_name} = Tops &amp; Shirts</msg>
+<status status="PASS" starttime="20231204 00:01:11.486" endtime="20231204 00:01:11.486"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.486" endtime="20231204 00:01:11.486"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.485" endtime="20231204 00:01:11.486"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 28, 'name': 'Pure Cotton V-Neck T-Shirt', 'price': 'Rs. 1299', 'brand': 'H&amp;M', 'category': {'usertype': {'usertype': 'Men'}, 'category': 'Tshirts'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.486" level="INFO">${category} = {'usertype': {'usertype': 'Men'}, 'category': 'Tshirts'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.486" endtime="20231204 00:01:11.486"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.486" level="INFO">${category_name} = Tshirts</msg>
+<status status="PASS" starttime="20231204 00:01:11.486" endtime="20231204 00:01:11.486"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.486" endtime="20231204 00:01:11.487"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.486" endtime="20231204 00:01:11.487"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 29, 'name': 'Green Side Placket Detail T-Shirt', 'price': 'Rs. 1000', 'brand': 'Polo', 'category': {'usertype': {'usertype': 'Men'}, 'category': 'Tshirts'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.487" level="INFO">${category} = {'usertype': {'usertype': 'Men'}, 'category': 'Tshirts'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.487" endtime="20231204 00:01:11.487"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.487" level="INFO">${category_name} = Tshirts</msg>
+<status status="PASS" starttime="20231204 00:01:11.487" endtime="20231204 00:01:11.487"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.487" endtime="20231204 00:01:11.487"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.487" endtime="20231204 00:01:11.487"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 30, 'name': 'Premium Polo T-Shirts', 'price': 'Rs. 1500', 'brand': 'Polo', 'category': {'usertype': {'usertype': 'Men'}, 'category': 'Tshirts'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.488" level="INFO">${category} = {'usertype': {'usertype': 'Men'}, 'category': 'Tshirts'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.488" endtime="20231204 00:01:11.488"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.488" level="INFO">${category_name} = Tshirts</msg>
+<status status="PASS" starttime="20231204 00:01:11.488" endtime="20231204 00:01:11.488"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.488" endtime="20231204 00:01:11.488"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.487" endtime="20231204 00:01:11.488"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 31, 'name': 'Pure Cotton Neon Green Tshirt', 'price': 'Rs. 850', 'brand': 'H&amp;M', 'category': {'usertype': {'usertype': 'Men'}, 'category': 'Tshirts'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.489" level="INFO">${category} = {'usertype': {'usertype': 'Men'}, 'category': 'Tshirts'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.488" endtime="20231204 00:01:11.489"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.489" level="INFO">${category_name} = Tshirts</msg>
+<status status="PASS" starttime="20231204 00:01:11.489" endtime="20231204 00:01:11.489"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.489" endtime="20231204 00:01:11.489"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.488" endtime="20231204 00:01:11.489"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 33, 'name': 'Soft Stretch Jeans', 'price': 'Rs. 799', 'brand': 'Polo', 'category': {'usertype': {'usertype': 'Men'}, 'category': 'Jeans'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.490" level="INFO">${category} = {'usertype': {'usertype': 'Men'}, 'category': 'Jeans'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.489" endtime="20231204 00:01:11.490"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.490" level="INFO">${category_name} = Jeans</msg>
+<status status="PASS" starttime="20231204 00:01:11.490" endtime="20231204 00:01:11.490"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.490" endtime="20231204 00:01:11.490"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.489" endtime="20231204 00:01:11.490"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 35, 'name': 'Regular Fit Straight Jeans', 'price': 'Rs. 1200', 'brand': 'H&amp;M', 'category': {'usertype': {'usertype': 'Men'}, 'category': 'Jeans'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.490" level="INFO">${category} = {'usertype': {'usertype': 'Men'}, 'category': 'Jeans'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.490" endtime="20231204 00:01:11.490"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.491" level="INFO">${category_name} = Jeans</msg>
+<status status="PASS" starttime="20231204 00:01:11.491" endtime="20231204 00:01:11.491"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.491" endtime="20231204 00:01:11.491"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.490" endtime="20231204 00:01:11.491"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 37, 'name': 'Grunt Blue Slim Fit Jeans', 'price': 'Rs. 1400', 'brand': 'Polo', 'category': {'usertype': {'usertype': 'Men'}, 'category': 'Jeans'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.492" level="INFO">${category} = {'usertype': {'usertype': 'Men'}, 'category': 'Jeans'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.491" endtime="20231204 00:01:11.492"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.492" level="INFO">${category_name} = Jeans</msg>
+<status status="PASS" starttime="20231204 00:01:11.492" endtime="20231204 00:01:11.492"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.492" endtime="20231204 00:01:11.492"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.491" endtime="20231204 00:01:11.492"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 38, 'name': 'Rose Pink Embroidered Maxi Dress', 'price': 'Rs. 2300', 'brand': 'Madame', 'category': {'usertype': {'usertype': 'Women'}, 'category': 'Dress'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.493" level="INFO">${category} = {'usertype': {'usertype': 'Women'}, 'category': 'Dress'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.493" endtime="20231204 00:01:11.493"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.493" level="INFO">${category_name} = Dress</msg>
+<status status="PASS" starttime="20231204 00:01:11.493" endtime="20231204 00:01:11.493"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.493" endtime="20231204 00:01:11.493"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.492" endtime="20231204 00:01:11.493"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 39, 'name': 'Cotton Silk Hand Block Print Saree', 'price': 'Rs. 3000', 'brand': 'Biba', 'category': {'usertype': {'usertype': 'Women'}, 'category': 'Saree'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.494" level="INFO">${category} = {'usertype': {'usertype': 'Women'}, 'category': 'Saree'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.493" endtime="20231204 00:01:11.494"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.494" level="INFO">${category_name} = Saree</msg>
+<status status="PASS" starttime="20231204 00:01:11.494" endtime="20231204 00:01:11.494"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.494" endtime="20231204 00:01:11.494"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.493" endtime="20231204 00:01:11.494"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 40, 'name': 'Rust Red Linen Saree', 'price': 'Rs. 3500', 'brand': 'Biba', 'category': {'usertype': {'usertype': 'Women'}, 'category': 'Saree'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.495" level="INFO">${category} = {'usertype': {'usertype': 'Women'}, 'category': 'Saree'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.494" endtime="20231204 00:01:11.495"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.495" level="INFO">${category_name} = Saree</msg>
+<status status="PASS" starttime="20231204 00:01:11.495" endtime="20231204 00:01:11.495"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.495" endtime="20231204 00:01:11.495"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.494" endtime="20231204 00:01:11.495"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 41, 'name': 'Beautiful Peacock Blue Cotton Linen Saree', 'price': 'Rs. 5000', 'brand': 'Madame', 'category': {'usertype': {'usertype': 'Women'}, 'category': 'Saree'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.495" level="INFO">${category} = {'usertype': {'usertype': 'Women'}, 'category': 'Saree'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.495" endtime="20231204 00:01:11.495"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.496" level="INFO">${category_name} = Saree</msg>
+<status status="PASS" starttime="20231204 00:01:11.495" endtime="20231204 00:01:11.496"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.496" endtime="20231204 00:01:11.496"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.495" endtime="20231204 00:01:11.496"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 42, 'name': 'Lace Top For Women', 'price': 'Rs. 1400', 'brand': 'Mast &amp; Harbour', 'category': {'usertype': {'usertype': 'Women'}, 'category': 'Tops'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.496" level="INFO">${category} = {'usertype': {'usertype': 'Women'}, 'category': 'Tops'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.496" endtime="20231204 00:01:11.496"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.496" level="INFO">${category_name} = Tops</msg>
+<status status="PASS" starttime="20231204 00:01:11.496" endtime="20231204 00:01:11.496"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.496" endtime="20231204 00:01:11.496"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.496" endtime="20231204 00:01:11.497"/>
+</iter>
+<iter>
+<var name="${product}">{'id': 43, 'name': 'GRAPHIC DESIGN MEN T SHIRT - BLUE', 'price': 'Rs. 1389', 'brand': 'Mast &amp; Harbour', 'category': {'usertype': {'usertype': 'Men'}, 'category': 'Tshirts'}}</var>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category}</var>
+<arg>${product}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.497" level="INFO">${category} = {'usertype': {'usertype': 'Men'}, 'category': 'Tshirts'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.497" endtime="20231204 00:01:11.497"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${category_name}</var>
+<arg>${category}</arg>
+<arg>category</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231204 00:01:11.497" level="INFO">${category_name} = Tshirts</msg>
+<status status="PASS" starttime="20231204 00:01:11.497" endtime="20231204 00:01:11.497"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${categories}</arg>
+<arg>${category_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231204 00:01:11.497" endtime="20231204 00:01:11.497"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:11.497" endtime="20231204 00:01:11.497"/>
+</iter>
+<status status="PASS" starttime="20231204 00:01:11.457" endtime="20231204 00:01:11.497"/>
+</for>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${categories}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231204 00:01:11.497" endtime="20231204 00:01:11.498"/>
+</kw>
+<status status="PASS" starttime="20231204 00:01:10.634" endtime="20231204 00:01:11.498"/>
 </test>
-<test id="s1-t4" name=" POST /api/Search Product" line="71">
+<test id="s1-t4" name=" POST /api/Search Product" line="90">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231203 20:03:23.087" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231203 20:03:23.087" endtime="20231203 20:03:23.088"/>
+<msg timestamp="20231204 00:01:11.499" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231204 00:01:11.498" endtime="20231204 00:01:11.499"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
 <arg>search_product=top</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231203 20:03:23.088" level="INFO">${body} = {'search_product': 'top'}</msg>
-<status status="PASS" starttime="20231203 20:03:23.088" endtime="20231203 20:03:23.088"/>
+<msg timestamp="20231204 00:01:11.499" level="INFO">${body} = {'search_product': 'top'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.499" endtime="20231204 00:01:11.499"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231203 20:03:23.089" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20231203 20:03:23.088" endtime="20231203 20:03:23.089"/>
+<msg timestamp="20231204 00:01:11.500" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.500" endtime="20231204 00:01:11.500"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${response}</var>
 <arg>${URL}/api/searchProduct</arg>
 <arg>data=${body}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20231203 20:03:24.106" level="INFO">POST Request : url=https://automationexercise.com/api/searchProduct 
+<msg timestamp="20231204 00:01:11.861" level="INFO">POST Request : url=https://automationexercise.com/api/searchProduct 
  path_url=/api/searchProduct 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '18', 'Content-Type': 'application/x-www-form-urlencoded'} 
  body=search_product=top 
  </msg>
-<msg timestamp="20231203 20:03:24.106" level="INFO">POST Response : url=https://automationexercise.com/api/searchProduct 
+<msg timestamp="20231204 00:01:11.861" level="INFO">POST Response : url=https://automationexercise.com/api/searchProduct 
  status=200, reason=OK 
- headers={'Date': 'Sun, 03 Dec 2023 18:03:23 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'PUT, DELETE, OPTIONS, POST, GET', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=CQYJz9QZSw2635DKWCPh%2B3MRJZAgNwnCLxed7%2B05jBB8Hu4ubtCIjUxHZljuOxFa1Zq0Ja9H9qk1dbgmyK9m%2F0oRDqZJ93BUGmlYa80MzxwFOWBqTNtbfxrDFlAMSVAA5ylIC9VExVUB"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fdb9de18ccd90e-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ headers={'Date': 'Sun, 03 Dec 2023 22:01:11 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'GET, POST, DELETE, PUT, OPTIONS', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=Cpzh37s%2BiHEQ6hOT5Czn66uuxbq2spuVbEpC55l3%2BjsoJYppEHFfQBFB%2FL0XmXrVwCPHX0ELFKAg%2B4%2F0O8RKXJe1IpIqUkKnbKsYAFm1vsNipiCUpaWUIRGT4LLuXtDU5oU2kAvu8S3S"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82ff16378ff2d91e-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
  body={"responseCode": 200, "products": [{"id": 1, "name": "Blue Top", "price": "Rs. 500", "brand": "Polo", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 5, "name": "Winter Top", "price": "Rs. 600", "brand": "Mast &amp; Harbour", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 6, "name": "Summer White Top", "price": "Rs. 400", "brand": "H&amp;M", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 7, "name": "Madame Top For Women", "price": "Rs. 1000", "brand": "Madame", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 8, "name": "Fancy Green Top", "price": "Rs. 700", "brand": "Polo", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}, {"id": 11, "name": "Sleeves Printed Top - White", "price": "Rs. 499", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 12, "name": "Half Sleeves Top Schiffli Detailing - Pink", "price": "Rs. 359", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 13, "name": "Frozen Tops For Kids", "price": "Rs. 278", "brand": "Allen Solly Junior", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 14, "name": "Full Sleeves Top Cherry - Pink", "price": "Rs. 679", "brand": "Kookie Kids", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 15, "name": "Printed Off Shoulder Top - White", "price": "Rs. 315", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 16, "name": "Sleeves Top and Short - Blue &amp; Pink", "price": "Rs. 478", "brand": "Babyhug", "category": {"usertype": {"usertype": "Kids"}, "category": "Dress"}}, {"id": 18, "name": "Little Girls Mr. Panda Shirt", "price": "Rs. 1200", "brand": "Kookie Kids", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 24, "name": "Colour Blocked Shirt \u2013 Sky Blue", "price": "Rs. 849", "brand": "Allen Solly Junior", "category": {"usertype": {"usertype": "Kids"}, "category": "Tops &amp; Shirts"}}, {"id": 42, "name": "Lace Top For Women", "price": "Rs. 1400", "brand": "Mast &amp; Harbour", "category": {"usertype": {"usertype": "Women"}, "category": "Tops"}}]} 
  </msg>
-<msg timestamp="20231203 20:03:24.108" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20231203 20:03:23.089" endtime="20231203 20:03:24.108"/>
+<msg timestamp="20231204 00:01:11.861" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231204 00:01:11.500" endtime="20231204 00:01:11.861"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:24.108" endtime="20231203 20:03:24.109"/>
+<status status="PASS" starttime="20231204 00:01:11.862" endtime="20231204 00:01:11.862"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:24.109" endtime="20231203 20:03:24.109"/>
+<status status="PASS" starttime="20231204 00:01:11.863" endtime="20231204 00:01:11.864"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.headers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:24.109" endtime="20231203 20:03:24.110"/>
+<status status="PASS" starttime="20231204 00:01:11.864" endtime="20231204 00:01:11.864"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20231203 20:03:24.111" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20231203 20:03:24.110" endtime="20231203 20:03:24.111"/>
+<msg timestamp="20231204 00:01:11.865" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20231204 00:01:11.865" endtime="20231204 00:01:11.865"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20231203 20:03:24.111" endtime="20231203 20:03:24.111"/>
+<status status="PASS" starttime="20231204 00:01:11.865" endtime="20231204 00:01:11.866"/>
 </kw>
-<status status="PASS" starttime="20231203 20:03:23.087" endtime="20231203 20:03:24.111"/>
+<status status="PASS" starttime="20231204 00:01:11.498" endtime="20231204 00:01:11.866"/>
 </test>
-<test id="s1-t5" name="GET /api/getUserDetailByEmail" line="84">
+<test id="s1-t5" name="GET /api/getUserDetailByEmail" line="103">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231203 20:03:24.112" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231203 20:03:24.112" endtime="20231203 20:03:24.112"/>
+<msg timestamp="20231204 00:01:11.867" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231204 00:01:11.866" endtime="20231204 00:01:11.867"/>
 </kw>
 <kw name="Get Variable Value" library="BuiltIn">
 <var>${email}</var>
 <arg>${EMAIL}</arg>
 <doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<msg timestamp="20231203 20:03:24.112" level="INFO">${email} = nishan@gmail.com</msg>
-<status status="PASS" starttime="20231203 20:03:24.112" endtime="20231203 20:03:24.112"/>
+<msg timestamp="20231204 00:01:11.868" level="INFO">${email} = nishan@gmail.com</msg>
+<status status="PASS" starttime="20231204 00:01:11.867" endtime="20231204 00:01:11.868"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${params}</var>
 <arg>email=${email}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231203 20:03:24.113" level="INFO">${params} = {'email': 'nishan@gmail.com'}</msg>
-<status status="PASS" starttime="20231203 20:03:24.112" endtime="20231203 20:03:24.113"/>
+<msg timestamp="20231204 00:01:11.868" level="INFO">${params} = {'email': 'nishan@gmail.com'}</msg>
+<status status="PASS" starttime="20231204 00:01:11.868" endtime="20231204 00:01:11.868"/>
 </kw>
 <kw name="GET" library="RequestsLibrary">
 <var>${response}</var>
 <arg>url=${URL}/api/getUserDetailByEmail</arg>
 <arg>params=${params}</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20231203 20:03:24.336" level="INFO">GET Request : url=https://automationexercise.com/api/getUserDetailByEmail?email=nishan%40gmail.com 
+<msg timestamp="20231204 00:01:12.678" level="INFO">GET Request : url=https://automationexercise.com/api/getUserDetailByEmail?email=nishan%40gmail.com 
  path_url=/api/getUserDetailByEmail?email=nishan%40gmail.com 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20231203 20:03:24.336" level="INFO">GET Response : url=https://automationexercise.com/api/getUserDetailByEmail?email=nishan%40gmail.com 
+<msg timestamp="20231204 00:01:12.678" level="INFO">GET Response : url=https://automationexercise.com/api/getUserDetailByEmail?email=nishan%40gmail.com 
  status=200, reason=OK 
- headers={'Date': 'Sun, 03 Dec 2023 18:03:24 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'PUT, DELETE, OPTIONS, POST, GET', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=YuDld%2BJklcndi4XcKtln97AZIq%2Bw%2FsbgAyhjRLmS6ZNe4GtLSNbN06Uc1CdvnHEU00dvdjWBkd4j4UixshNaPy5Ybh2W3uFtrOp9KrNt9omlX42KxWhhef4e1WkcVMEjbmPF3933jQLW"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fdb9e46eb54c86-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
- body={"responseCode": 200, "user": {"id": 190560, "name": "NishanS", "email": "nishan@gmail.com", "title": "Mr", "birth_day": "10", "birth_month": "", "birth_year": "1990", "first_name": "Nishaan", "last_name": "Silvaa", "company": "NishanS (PVT) Ltd", "address1": "YO-Kyla", "address2": "", "country": "", "state": "Turku", "city": "Finland", "zipcode": "53430"}} 
+ headers={'Date': 'Sun, 03 Dec 2023 22:01:12 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'GET, POST, DELETE, PUT, OPTIONS', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=6AwsEtu73O2LvLLSn6bdhy65wBWtYitkkw0C6G6DhgS99Y%2FvLsXkPY4fvQJPIz%2FRW2mQHpSB4BKd3pT1M2UMvLb34WJo35CRCyZT2eagRjU5IoFovPYPuy2hg%2FxbwR%2F5OYwCPVEMyGqT"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82ff1639cb7cd94b-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"responseCode": 200, "user": {"id": 190703, "name": "NishanS", "email": "nishan@gmail.com", "title": "Mr", "birth_day": "10", "birth_month": "", "birth_year": "1990", "first_name": "Nishaan", "last_name": "Silvaa", "company": "NishanS (PVT) Ltd", "address1": "YO-Kyla", "address2": "", "country": "", "state": "Turku", "city": "Finland", "zipcode": "53430"}} 
  </msg>
-<msg timestamp="20231203 20:03:24.336" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20231203 20:03:24.113" endtime="20231203 20:03:24.336"/>
+<msg timestamp="20231204 00:01:12.682" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231204 00:01:11.868" endtime="20231204 00:01:12.682"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:24.336" endtime="20231203 20:03:24.337"/>
+<status status="PASS" starttime="20231204 00:01:12.682" endtime="20231204 00:01:12.683"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:24.337" endtime="20231203 20:03:24.337"/>
+<status status="PASS" starttime="20231204 00:01:12.683" endtime="20231204 00:01:12.684"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.headers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:24.337" endtime="20231203 20:03:24.338"/>
+<status status="PASS" starttime="20231204 00:01:12.684" endtime="20231204 00:01:12.685"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20231203 20:03:24.338" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20231203 20:03:24.338" endtime="20231203 20:03:24.338"/>
+<msg timestamp="20231204 00:01:12.686" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20231204 00:01:12.685" endtime="20231204 00:01:12.686"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20231203 20:03:24.338" endtime="20231203 20:03:24.339"/>
+<status status="PASS" starttime="20231204 00:01:12.686" endtime="20231204 00:01:12.687"/>
 </kw>
-<status status="PASS" starttime="20231203 20:03:24.111" endtime="20231203 20:03:24.339"/>
+<status status="PASS" starttime="20231204 00:01:11.866" endtime="20231204 00:01:12.687"/>
 </test>
-<test id="s1-t6" name="DELETE /api/deleteAccount" line="97">
+<test id="s1-t6" name="DELETE /api/deleteAccount" line="116">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>mysession</arg>
 <arg>${URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20231203 20:03:24.339" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20231203 20:03:24.339" endtime="20231203 20:03:24.339"/>
+<msg timestamp="20231204 00:01:12.688" level="INFO">Creating Session using : alias=mysession, url=https://automationexercise.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231204 00:01:12.688" endtime="20231204 00:01:12.688"/>
 </kw>
 <kw name="Get Variable Value" library="BuiltIn">
 <var>${delete_user}</var>
 <arg>${DELETE_USER}</arg>
 <doc>Returns variable value or ``default`` if the variable does not exist.</doc>
-<msg timestamp="20231203 20:03:24.340" level="INFO">${delete_user} = {'email': 'nishan@gmail.com', 'password': 'nishan@1'}</msg>
-<status status="PASS" starttime="20231203 20:03:24.340" endtime="20231203 20:03:24.340"/>
+<msg timestamp="20231204 00:01:12.689" level="INFO">${delete_user} = {'email': 'nishan@gmail.com', 'password': 'nishan@1'}</msg>
+<status status="PASS" starttime="20231204 00:01:12.688" endtime="20231204 00:01:12.689"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <var>${body}</var>
 <arg>$delete_user</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231203 20:03:24.340" level="INFO">${body} = {'email': 'nishan@gmail.com', 'password': 'nishan@1'}</msg>
-<status status="PASS" starttime="20231203 20:03:24.340" endtime="20231203 20:03:24.340"/>
+<msg timestamp="20231204 00:01:12.689" level="INFO">${body} = {'email': 'nishan@gmail.com', 'password': 'nishan@1'}</msg>
+<status status="PASS" starttime="20231204 00:01:12.689" endtime="20231204 00:01:12.689"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20231203 20:03:24.340" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20231203 20:03:24.340" endtime="20231203 20:03:24.340"/>
+<msg timestamp="20231204 00:01:12.690" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231204 00:01:12.690" endtime="20231204 00:01:12.690"/>
 </kw>
 <kw name="DELETE" library="RequestsLibrary">
 <var>${response}</var>
 <arg>${URL}/api/deleteAccount</arg>
 <arg>data=${body}</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20231203 20:03:24.722" level="INFO">DELETE Request : url=https://automationexercise.com/api/deleteAccount 
+<msg timestamp="20231204 00:01:12.949" level="INFO">DELETE Request : url=https://automationexercise.com/api/deleteAccount 
  path_url=/api/deleteAccount 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '44', 'Content-Type': 'application/x-www-form-urlencoded'} 
  body=email=nishan%40gmail.com&amp;password=nishan%401 
  </msg>
-<msg timestamp="20231203 20:03:24.722" level="INFO">DELETE Response : url=https://automationexercise.com/api/deleteAccount 
+<msg timestamp="20231204 00:01:12.949" level="INFO">DELETE Response : url=https://automationexercise.com/api/deleteAccount 
  status=200, reason=OK 
- headers={'Date': 'Sun, 03 Dec 2023 18:03:24 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'DELETE, OPTIONS', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=hWr7BWSwbPHRHRDDyb%2BBJEvYPOJEcz7NY%2BhWdVNtFoYATfuQgpFWE4KIqs4VjR4%2FLcbxAOj3mmVpBUn6XpUQsaHXvNcyzWXGSA8Laq0w4Tk6i4AlRcSqDqdyVEdE5YvoWdT7MZmR4CaV"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82fdb9e5c908d92e-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ headers={'Date': 'Sun, 03 Dec 2023 22:01:12 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'vary': 'Accept,Cookie,Accept-Encoding', 'referrer-policy': 'same-origin', 'x-frame-options': 'DENY', 'x-content-type-options': 'nosniff', 'allow': 'DELETE, OPTIONS', 'x-powered-by': 'Phusion Passenger 6.0.7', 'status': '200 OK', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=5Kc0oaEoJvAMvoEpGjZLZEzCzQmnAlWfY%2BJutrDOOqsW%2BmWvkrSHdR4TVnzEFoL%2FMLqGRFs7ncyu5FbFjEU44Ajvi9m0orNFDFGoTPPcN65I1C9qHO1slXmAnH2alzlFLC%2BmwTYhoUBR"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '82ff163efa0b4c82-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
  body={"responseCode": 200, "message": "Account deleted!"} 
  </msg>
-<msg timestamp="20231203 20:03:24.722" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20231203 20:03:24.340" endtime="20231203 20:03:24.722"/>
+<msg timestamp="20231204 00:01:12.949" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231204 00:01:12.690" endtime="20231204 00:01:12.950"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:24.722" endtime="20231203 20:03:24.723"/>
+<status status="PASS" starttime="20231204 00:01:12.950" endtime="20231204 00:01:12.951"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:24.723" endtime="20231203 20:03:24.724"/>
+<status status="PASS" starttime="20231204 00:01:12.952" endtime="20231204 00:01:12.953"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${response.headers}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231203 20:03:24.724" endtime="20231203 20:03:24.724"/>
+<status status="PASS" starttime="20231204 00:01:12.953" endtime="20231204 00:01:12.954"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20231203 20:03:24.725" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20231203 20:03:24.725" endtime="20231203 20:03:24.725"/>
+<msg timestamp="20231204 00:01:12.955" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20231204 00:01:12.954" endtime="20231204 00:01:12.955"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20231203 20:03:24.725" endtime="20231203 20:03:24.725"/>
+<status status="PASS" starttime="20231204 00:01:12.955" endtime="20231204 00:01:12.956"/>
 </kw>
-<status status="PASS" starttime="20231203 20:03:24.339" endtime="20231203 20:03:24.725"/>
+<status status="PASS" starttime="20231204 00:01:12.687" endtime="20231204 00:01:12.956"/>
 </test>
 <doc>Test Product API of the backend</doc>
-<status status="PASS" starttime="20231203 20:03:20.224" endtime="20231203 20:03:24.726"/>
+<status status="PASS" starttime="20231204 00:01:08.448" endtime="20231204 00:01:12.957"/>
 </suite>
 <statistics>
 <total>
@@ -546,5 +1454,14 @@
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20231204 00:01:08.752" level="ERROR">Error in file '/Users/nishansilva/Test_Automation/online-shop/TestSuites/API_Testcases.robot' on line 6: Importing library 'Random' failed: ModuleNotFoundError: No module named 'Random'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /usr/local/bin
+  /usr/local/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python311.zip
+  /usr/local/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11
+  /usr/local/Cellar/python@3.11/3.11.6_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload
+  /usr/local/lib/python3.11/site-packages</msg>
 </errors>
 </robot>
