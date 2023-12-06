@@ -1,4 +1,5 @@
 *** Settings ***
+<<<<<<< HEAD
 Documentation   Test Product API of the backend
 Library         RequestsLibrary
 Library         Collections
@@ -6,10 +7,20 @@ Library         JSONLibrary
 Library         Random
 Resource        ../KeywordLibraries/CommonKeywords.robot  
 Variables       ../TestData/TestData.py
+=======
+Documentation       Test Product API of the backend
+
+Library             RequestsLibrary
+Library             Collections
+Resource            ../KeywordLibraries/CommonKeywords.robot
+Variables           ../TestData/TestData.py
+
+>>>>>>> dev
 
 *** Variables ***
-${URL}=      ${ENV_BACKEND_PROTOCOL}://${ENV_BACKEND_HOST}
-${TIMEOUT}=    5
+${URL}=         ${ENV_BACKEND_PROTOCOL}://${ENV_BACKEND_HOST}
+${TIMEOUT}=     5
+
 
 *** Test Cases ***
 POST /api/createAccount
@@ -23,11 +34,11 @@ POST /api/createAccount
     Log To Console    ${response.headers}
     ${json_object}=    Evaluate    json.loads($response.content)    json
 
-    #Status code validation
+    # Status code validation
     ${status_code}=    Convert To String    ${response.status_code}
     Should Be Equal    ${status_code}    200
 
-    #Single data validation
+    # Single data validation
     ${response_code}=    Get From Dictionary    ${json_object}    responseCode
     ${create_account_message}=    Get From Dictionary    ${json_object}    message
     Log To Console    ${response_code}
@@ -36,17 +47,17 @@ POST /api/createAccount
     Should Be Equal As Strings    ${create_account_message}    User created!
 
 PUT /api/updateAccount
-     Create Session    mysession    ${URL}
-     ${update_user_details}=    Get Variable Value    ${UPDATE_USER_DETAILS}
-     ${body}=    Evaluate    $update_user_details    # Directly use the retrieved value   
-     ${header}=    Create Dictionary    Content-Type=application/json
-     ${response}=    PUT    ${URL}/api/updateAccount    data=${body}
-     Log To Console    ${response.status_code}
-     Log To Console    ${response.content}
-     Log To Console    ${response.headers}
-     ${json_object}=    Evaluate    json.loads($response.content)    json
+    Create Session    mysession    ${URL}
+    ${update_user_details}=    Get Variable Value    ${UPDATE_USER_DETAILS}
+    ${body}=    Evaluate    $update_user_details    # Directly use the retrieved value
+    ${header}=    Create Dictionary    Content-Type=application/json
+    ${response}=    PUT    ${URL}/api/updateAccount    data=${body}
+    Log To Console    ${response.status_code}
+    Log To Console    ${response.content}
+    Log To Console    ${response.headers}
+    ${json_object}=    Evaluate    json.loads($response.content)    json
 
-    #Status code validation
+    # Status code validation
     ${status_code}=    Convert To String    ${response.status_code}
     Should Be Equal    ${status_code}    200
 
@@ -67,10 +78,11 @@ GET /api/productsList
     Log To Console    ${response.headers}
     ${json_object}=    Evaluate    json.loads($response.content)    json
 
-    #Validations
+    # Validations
     ${status_code}=    Convert To String    ${response.status_code}
     Should Be Equal    ${status_code}    200
 
+<<<<<<< HEAD
 #StoreCategoriesAndUseInNextRequest
     @{categories}=    Create List
 
@@ -95,8 +107,18 @@ GET /api/productsList
      Log To Console    ${response.status_code}
      Log To Console    ${response.content}
      Log To Console    ${response.headers}
+=======
+ POST /api/Search Product
+    Create Session    mysession    ${URL}
+    ${body}=    Create Dictionary    search_product=top
+    ${header}=    Create Dictionary    Content-Type=application/json
+    ${response}=    POST    ${URL}/api/searchProduct    data=${body}
+    Log To Console    ${response.status_code}
+    Log To Console    ${response.content}
+    Log To Console    ${response.headers}
+>>>>>>> dev
 
-    #Validations
+    # Validations
     ${status_code}=    Convert To String    ${response.status_code}
     Should Be Equal    ${status_code}    200
 
@@ -109,20 +131,20 @@ GET /api/getUserDetailByEmail
     Log To Console    ${response.content}
     Log To Console    ${response.headers}
 
-    #Validations
+    # Validations
     ${status_code}=    Convert To String    ${response.status_code}
     Should Be Equal    ${status_code}    200
 
 DELETE /api/deleteAccount
-     Create Session    mysession    ${URL}
-     ${delete_user}=    Get Variable Value    ${DELETE_USER}
-     ${body}=    Evaluate    $delete_user    # Directly use the retrieved value   
-     ${header}=    Create Dictionary    Content-Type=application/json
-     ${response}=    DELETE    ${URL}/api/deleteAccount    data=${body}
-     Log To Console    ${response.status_code}
-     Log To Console    ${response.content}
-     Log To Console    ${response.headers}
+    Create Session    mysession    ${URL}
+    ${delete_user}=    Get Variable Value    ${DELETE_USER}
+    ${body}=    Evaluate    $delete_user    # Directly use the retrieved value
+    ${header}=    Create Dictionary    Content-Type=application/json
+    ${response}=    DELETE    ${URL}/api/deleteAccount    data=${body}
+    Log To Console    ${response.status_code}
+    Log To Console    ${response.content}
+    Log To Console    ${response.headers}
 
-    #Validations
+    # Validations
     ${status_code}=    Convert To String    ${response.status_code}
     Should Be Equal    ${status_code}    200
