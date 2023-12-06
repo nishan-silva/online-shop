@@ -16,10 +16,16 @@ POST /api/createAccount
     Log To Console    ${parsed_response.status_code}
     Log To Console    ${parsed_response.content}
 
+    #Validating Response Message
+    CommonKeywords.Validating Response Message   ${parsed_response.content}    User created!
+
 PUT /api/updateAccount
     ${parsed_response}=    CommonKeywords.Calling API    PUT    ${URL}/api/updateAccount    200    data=${UPDATE_USER_DETAILS}
-        Log To Console    ${parsed_response.status_code}
-        Log To Console    ${parsed_response.content}
+    Log To Console    ${parsed_response.status_code}
+    Log To Console    ${parsed_response.content}
+
+    #Validating Response Message
+    CommonKeywords.Validating Response Message   ${parsed_response.content}    User updated!
 
 GET /api/productsList
     ${parsed_response}=    CommonKeywords.Calling API    GET    ${URL}/api/productsList   200
