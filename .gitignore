@@ -4,6 +4,7 @@ log.html
 output.xml
 report.html
 __pycache__
+*.png
 # Ignore IDE-specific files
 *vscode*
 .idea
