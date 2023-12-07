@@ -29,7 +29,7 @@ GET /api/productsList
     ${parsed_response}=    CommonKeywords.Calling API    GET    ${URL}/api/productsList   200
     Response Logs    ${parsed_response.status_code}    ${parsed_response.content}
 
- POST /api/Search Product
+POST /api/Search Product
     ${parsed_response}=    CommonKeywords.Calling API    POST    ${URL}/api/searchProduct   200        data=${SEARCH_PRODUCT}
     Response Logs    ${parsed_response.status_code}    ${parsed_response.content}
 

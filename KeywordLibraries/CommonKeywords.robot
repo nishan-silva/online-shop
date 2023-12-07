@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Keywords that can be used in all suites are stored here.
 Library    RequestsLibrary
-Library             Collections
+Library    Collections
 
 *** Keywords ***
 Calling API
