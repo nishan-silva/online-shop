@@ -12,31 +12,31 @@ ${TIMEOUT}=     5
 
 *** Test Cases ***
 POST /api/createAccount
-    ${parsed_response}=    CommonKeywords.Calling API    POST    ${URL}/api/createAccount    200    data=${USER_REGISTRATION_SUCCESS}
-    Response Logs    ${parsed_response.status_code}    ${parsed_response.content}
+    ${response}=    CommonKeywords.Calling API    POST    ${URL}/api/createAccount    200    data=${USER_REGISTRATION_SUCCESS}
+    Response Logs    ${response.status_code}    ${response.content}
 
     #Validating Response Message
-    CommonKeywords.Validating Response Message   ${parsed_response.content}    User created!
+    CommonKeywords.Validating Response Message   ${response.content}    User created!
 
 PUT /api/updateAccount
-    ${parsed_response}=    CommonKeywords.Calling API    PUT    ${URL}/api/updateAccount    200    data=${UPDATE_USER_DETAILS}
-    Response Logs    ${parsed_response.status_code}    ${parsed_response.content}
+    ${response}=    CommonKeywords.Calling API    PUT    ${URL}/api/updateAccount    200    data=${UPDATE_USER_DETAILS}
+    Response Logs    ${response.status_code}    ${response.content}
 
     #Validating Response Message
-    CommonKeywords.Validating Response Message   ${parsed_response.content}    User updated!
+    CommonKeywords.Validating Response Message   ${response.content}    User updated!
 
 GET /api/productsList
-    ${parsed_response}=    CommonKeywords.Calling API    GET    ${URL}/api/productsList   200
-    Response Logs    ${parsed_response.status_code}    ${parsed_response.content}
+    ${response}=    CommonKeywords.Calling API    GET    ${URL}/api/productsList   200
+    Response Logs    ${response.status_code}    ${response.content}
 
 POST /api/Search Product
-    ${parsed_response}=    CommonKeywords.Calling API    POST    ${URL}/api/searchProduct   200        data=${SEARCH_PRODUCT}
-    Response Logs    ${parsed_response.status_code}    ${parsed_response.content}
+    ${response}=    CommonKeywords.Calling API    POST    ${URL}/api/searchProduct   200        data=${SEARCH_PRODUCT}
+    Response Logs    ${response.status_code}    ${response.content}
 
 GET /api/getUserDetailByEmail
-    ${parsed_response}=    CommonKeywords.Calling API    GET    ${URL}/api/getUserDetailByEmail   200        params=email=${EMAIL}
-    Response Logs    ${parsed_response.status_code}    ${parsed_response.content}
+    ${response}=    CommonKeywords.Calling API    GET    ${URL}/api/getUserDetailByEmail   200        params=email=${EMAIL}
+    Response Logs    ${response.status_code}    ${response.content}
     
 DELETE /api/deleteAccount
-    ${parsed_response}=    CommonKeywords.Calling API    DELETE    ${URL}/api/deleteAccount   200        data=${DELETE_USER}
-    Response Logs    ${parsed_response.status_code}    ${parsed_response.content}
+    ${response}=    CommonKeywords.Calling API    DELETE    ${URL}/api/deleteAccount   200        data=${DELETE_USER}
+    Response Logs    ${response.status_code}    ${response.content}
