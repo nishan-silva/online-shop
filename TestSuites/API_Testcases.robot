@@ -3,40 +3,40 @@ Documentation       Test Product API of the backend
 
 Library             RequestsLibrary
 Library             Collections
-Resource            ../KeywordLibraries/CommonKeywords.robot
-Variables           ../TestData/TestData.py
+Resource            ../KeywordLibraries/BackendCommonKeywords.robot
+Variables           ../TestData/Backend_TestData.py
 
 *** Variables ***
-${URL}=         ${ENV_BACKEND_PROTOCOL}://${ENV_BACKEND_HOST}
+${BACKEND_URL}=         ${ENV_BACKEND_PROTOCOL}://${ENV_BACKEND_HOST}
 ${TIMEOUT}=     5
 
 *** Test Cases ***
 POST /api/createAccount
-    ${response}=    CommonKeywords.Calling API    POST    ${URL}/api/createAccount    200    data=${USER_REGISTRATION_SUCCESS}
+    ${response}=    BackendCommonKeywords.Calling API    POST    ${BACKEND_URL}/api/createAccount    200    data=${USER_REGISTRATION_SUCCESS}
     Response Logs    ${response.status_code}    ${response.content}
 
     #Validating Response Message
-    CommonKeywords.Validating Response Message   ${response.content}    User created!
+    BackendCommonKeywords.Validating Response Message   ${response.content}    User created!
 
 PUT /api/updateAccount
-    ${response}=    CommonKeywords.Calling API    PUT    ${URL}/api/updateAccount    200    data=${UPDATE_USER_DETAILS}
+    ${response}=    BackendCommonKeywords.Calling API    PUT    ${BACKEND_URL}/api/updateAccount    200    data=${UPDATE_USER_DETAILS}
     Response Logs    ${response.status_code}    ${response.content}
 
     #Validating Response Message
-    CommonKeywords.Validating Response Message   ${response.content}    User updated!
+    BackendCommonKeywords.Validating Response Message   ${response.content}    User updated!
 
 GET /api/productsList
-    ${response}=    CommonKeywords.Calling API    GET    ${URL}/api/productsList   200
+    ${response}=    BackendCommonKeywords.Calling API    GET    ${BACKEND_URL}/api/productsList   200
     Response Logs    ${response.status_code}    ${response.content}
 
 POST /api/Search Product
-    ${response}=    CommonKeywords.Calling API    POST    ${URL}/api/searchProduct   200        data=${SEARCH_PRODUCT}
+    ${response}=    BackendCommonKeywords.Calling API    POST    ${BACKEND_URL}/api/searchProduct   200        data=${SEARCH_PRODUCT}
     Response Logs    ${response.status_code}    ${response.content}
 
 GET /api/getUserDetailByEmail
-    ${response}=    CommonKeywords.Calling API    GET    ${URL}/api/getUserDetailByEmail   200        params=email=${EMAIL}
+    ${response}=    BackendCommonKeywords.Calling API    GET    ${BACKEND_URL}/api/getUserDetailByEmail   200        params=email=${EMAIL}
     Response Logs    ${response.status_code}    ${response.content}
     
 DELETE /api/deleteAccount
-    ${response}=    CommonKeywords.Calling API    DELETE    ${URL}/api/deleteAccount   200        data=${DELETE_USER}
+    ${response}=    BackendCommonKeywords.Calling API    DELETE    ${BACKEND_URL}/api/deleteAccount   200        data=${DELETE_USER}
     Response Logs    ${response.status_code}    ${response.content}

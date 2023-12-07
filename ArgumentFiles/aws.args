@@ -2,3 +2,6 @@
 --variable ENV_BACKEND_PROTOCOL:https
 --variable ENV_BACKEND_HOST:automationexercise.com
 --variable ENV_BACKEND_PORT:8080
+--variable ENV_FRONTEND_PROTOCOL:https
+--variable ENV_FRONTEND_HOST:automationexercise.com
+--variable ENV_FRONTEND_PORT:8080
