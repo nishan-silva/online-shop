@@ -11,6 +11,9 @@ ${ACCOUNT_INFO_LABLE}    //*[@id="form"]/div/div/div/div[1]/h2/b
 ${MR_RADIO_BUTTON}    //*[@id="id_gender1"]
 ${MRS_RADIO_BUTTON}    //*[@id="id_gender2"]
 ${PASSWORD_INPUT_TEXT}    //*[@id="password"]
+${DOB_DATE_DROPDOWN_MENU}    //select[@id="days"]
+${DOB_MONTH_DROPDOWN_MENU}    //select[@id='months']
+${DOB_YEAR_DROPDOWN_MENU}    //select[@id="years"]
 
 *** Keywords ***
 Click_Signup_Button_And_Validate_Signup_Page
@@ -23,7 +26,7 @@ Click_Signup_Button_And_Validate_Signup_Page
     Wait Until Element Is Visible    ${SIGNUP_BUTTON}
 
 Enter_User_Details_And_Register
-    [Arguments]    ${name}=${None}    ${email}=${None}    ${password}=${None}
+    [Arguments]    ${name}=${None}    ${email}=${None}    ${password}=${None}    ${dob_date}=${None}    ${dob_month}=${None}    ${dob_year}=${None}
     SeleniumLibrary.Input Text    ${NAME_INPUT_TEXT}    ${name}
     SeleniumLibrary.Input Text    ${EMAIL_INPUT_TEXT}    ${email}
     Click Element    ${SIGNUP_BUTTON}
@@ -33,4 +36,8 @@ Enter_User_Details_And_Register
     Click Element    ${MR_RADIO_BUTTON}
     Execute JavaScript    window.scrollBy(0, -500)
     SeleniumLibrary.Input Text    ${PASSWORD_INPUT_TEXT}    ${password}
+    Select From List by Index  ${DOB_DATE_DROPDOWN_MENU}    ${dob_date}
+    Select From List by Index    ${DOB_MONTH_DROPDOWN_MENU}    ${dob_month}
+    Select From List by Index    ${DOB_YEAR_DROPDOWN_MENU}    ${dob_year}
+    Execute JavaScript    window.scrollBy(0, -500)
     Sleep    3s
