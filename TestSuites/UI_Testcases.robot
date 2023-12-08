@@ -1,5 +1,5 @@
 *** Settings ***
-Test Setup    Open Browser    ${FRONTEND_URL}    ${BROWSER} 
+Test Setup       Open Browser    ${FRONTEND_URL}    ${BROWSER} 
 Test Teardown    Close Browser
 
 Library     SeleniumLibrary
