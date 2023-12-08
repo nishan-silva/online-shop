@@ -1,5 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../KeywordLibraries/FrontendHomePage.robot
+Variables   ../TestData/Frontend_TestData.py
 
 *** Variables ***
 # Signup Page Locators

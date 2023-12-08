@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+
 *** Variables ***
 # Home Page Locators
 ${SIGNUP_AND_LOGIN_BUTTON}    //*[@id="header"]/div/div/div/div[2]/div/ul/li[4]/a
