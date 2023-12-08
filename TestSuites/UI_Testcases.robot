@@ -1,4 +1,7 @@
 *** Settings ***
+Test Setup    Open Browser    ${FRONTEND_URL}    ${BROWSER} 
+Test Teardown    Close Browser
+
 Library     SeleniumLibrary
 Resource    ../KeywordLibraries/FrontendHomePage.robot
 Resource    ../KeywordLibraries/FrontendSignup.robot
@@ -10,12 +13,10 @@ ${BROWSER}=             Chrome
 
 *** Test Cases ***
 Home Page
-    Open Browser    ${FRONTEND_URL}    ${BROWSER}
+    Maximize Browser Window
     FrontendHomePage.Validate_Signup_Button
-    Close Browser
 
 User Registration
-    Open Browser    ${FRONTEND_URL}    ${BROWSER}
+    Maximize Browser Window
     FrontendSignup.Click_Signup_Button_And_Validate_Signup_Page
-    FrontendSignup.Enter_User_Details_And_Register    name=${NAME}    email=${EMAIL}    password=${PASSWORD}    dob_date=${DOB_DATE}    dob_month=${DOB_MONTH}    dob_year=${DOB_YEAR}
-    Close Browser
+    FrontendSignup.Enter_User_Details_And_Register
