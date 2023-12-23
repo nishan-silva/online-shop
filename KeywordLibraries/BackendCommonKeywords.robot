@@ -11,11 +11,11 @@ Calling API
     ${parsed_response}=    Set Variable    ${response}
     [Return]    ${parsed_response}
 
-Validating Response Message
-    [Arguments]    ${actual_response}    ${expected_message}
+Validating_Response_Message
+    [Arguments]    ${actual_response}    ${parameter_name}    ${expected_value}
     ${response_dict}=    Evaluate    json.loads($actual_response)    json
-    ${actual_message}=    Get From Dictionary    ${response_dict}    message
-    Should Be Equal As Strings    ${actual_message}    ${expected_message}
+    ${actual_parameter_value}=    Get From Dictionary    ${response_dict}    ${parameter_name}
+    Should Be Equal As Strings    ${actual_parameter_value}    ${expected_value}
     
 Response Logs
     [Arguments]    ${status_code}    ${content}
