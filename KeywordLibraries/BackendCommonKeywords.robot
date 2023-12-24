@@ -2,6 +2,7 @@
 Documentation    Keywords that can be used in all suites are stored here.
 Library    RequestsLibrary
 Library    Collections
+Library    ../Libraries/MongoDBKeywords.py
 
 *** Keywords ***
 # Backend
